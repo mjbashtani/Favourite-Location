@@ -24,6 +24,7 @@
 		8DBDFF9028CE1F72000F3BFB /* LocalPersonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8F28CE1F72000F3BFB /* LocalPersonLoader.swift */; };
 		8DBDFF9228CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9128CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift */; };
 		8DBDFF9528CE2709000F3BFB /* PersonStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9428CE2709000F3BFB /* PersonStoreSpy.swift */; };
+		8DBDFF9728CE27E0000F3BFB /* CodablePersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9628CE27E0000F3BFB /* CodablePersonStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8DBDFF8F28CE1F72000F3BFB /* LocalPersonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersonLoader.swift; sourceTree = "<group>"; };
 		8DBDFF9128CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRetrieveCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		8DBDFF9428CE2709000F3BFB /* PersonStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonStoreSpy.swift; sourceTree = "<group>"; };
+		8DBDFF9628CE27E0000F3BFB /* CodablePersonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePersonStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				8DBDFF8628CE03A6000F3BFB /* LocalPerson.swift */,
 				8DBDFF8828CE03B4000F3BFB /* LocalLocation.swift */,
 				8DBDFF8F28CE1F72000F3BFB /* LocalPersonLoader.swift */,
+				8DBDFF9628CE27E0000F3BFB /* CodablePersonStore.swift */,
 			);
 			path = "Person Cache";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				8DBDFF9028CE1F72000F3BFB /* LocalPersonLoader.swift in Sources */,
 				8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */,
 				8DBDFF8528CE02FD000F3BFB /* PersonStore.swift in Sources */,
+				8DBDFF9728CE27E0000F3BFB /* CodablePersonStore.swift in Sources */,
 				8DBDFF8728CE03A6000F3BFB /* LocalPerson.swift in Sources */,
 				8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */,
 			);
