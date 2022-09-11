@@ -18,6 +18,9 @@
 		8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF7D28CDFD5E000F3BFB /* Person.swift */; };
 		8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF7F28CDFDC5000F3BFB /* Location.swift */; };
 		8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8128CDFEA7000F3BFB /* PersonLoader.swift */; };
+		8DBDFF8528CE02FD000F3BFB /* PersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8428CE02FD000F3BFB /* PersonStore.swift */; };
+		8DBDFF8728CE03A6000F3BFB /* LocalPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8628CE03A6000F3BFB /* LocalPerson.swift */; };
+		8DBDFF8928CE03B4000F3BFB /* LocalLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8828CE03B4000F3BFB /* LocalLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		8DBDFF7D28CDFD5E000F3BFB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		8DBDFF7F28CDFDC5000F3BFB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8DBDFF8128CDFEA7000F3BFB /* PersonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonLoader.swift; sourceTree = "<group>"; };
+		8DBDFF8428CE02FD000F3BFB /* PersonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonStore.swift; sourceTree = "<group>"; };
+		8DBDFF8628CE03A6000F3BFB /* LocalPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPerson.swift; sourceTree = "<group>"; };
+		8DBDFF8828CE03B4000F3BFB /* LocalLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		8DBDFF4B28CDFA10000F3BFB /* Favourite Location */ = {
 			isa = PBXGroup;
 			children = (
+				8DBDFF8328CE02A8000F3BFB /* Person Cache */,
 				8DBDFF7C28CDFCC2000F3BFB /* Map feature */,
 				8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */,
 				8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */,
@@ -139,6 +146,16 @@
 				8DBDFF8128CDFEA7000F3BFB /* PersonLoader.swift */,
 			);
 			path = "Map feature";
+			sourceTree = "<group>";
+		};
+		8DBDFF8328CE02A8000F3BFB /* Person Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8DBDFF8428CE02FD000F3BFB /* PersonStore.swift */,
+				8DBDFF8628CE03A6000F3BFB /* LocalPerson.swift */,
+				8DBDFF8828CE03B4000F3BFB /* LocalLocation.swift */,
+			);
+			path = "Person Cache";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +292,10 @@
 				8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */,
 				8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */,
 				8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */,
+				8DBDFF8928CE03B4000F3BFB /* LocalLocation.swift in Sources */,
 				8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */,
+				8DBDFF8528CE02FD000F3BFB /* PersonStore.swift in Sources */,
+				8DBDFF8728CE03A6000F3BFB /* LocalPerson.swift in Sources */,
 				8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
