@@ -20,6 +20,7 @@
 		8DBDFF8728CE03A6000F3BFB /* LocalPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8628CE03A6000F3BFB /* LocalPerson.swift */; };
 		8DBDFF8928CE03B4000F3BFB /* LocalLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8828CE03B4000F3BFB /* LocalLocation.swift */; };
 		8DBDFF8C28CE04E9000F3BFB /* PersonCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8B28CE04E9000F3BFB /* PersonCacheUseCaseTests.swift */; };
+		8DBDFF8E28CE1C46000F3BFB /* PersonCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8D28CE1C46000F3BFB /* PersonCacheHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8DBDFF8628CE03A6000F3BFB /* LocalPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPerson.swift; sourceTree = "<group>"; };
 		8DBDFF8828CE03B4000F3BFB /* LocalLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLocation.swift; sourceTree = "<group>"; };
 		8DBDFF8B28CE04E9000F3BFB /* PersonCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCacheUseCaseTests.swift; sourceTree = "<group>"; };
+		8DBDFF8D28CE1C46000F3BFB /* PersonCacheHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCacheHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				8DBDFF8B28CE04E9000F3BFB /* PersonCacheUseCaseTests.swift */,
+				8DBDFF8D28CE1C46000F3BFB /* PersonCacheHelper.swift */,
 			);
 			path = "Person Cache";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DBDFF8E28CE1C46000F3BFB /* PersonCacheHelper.swift in Sources */,
 				8DBDFF6428CDFA14000F3BFB /* Favourite_LocationTests.swift in Sources */,
 				8DBDFF8C28CE04E9000F3BFB /* PersonCacheUseCaseTests.swift in Sources */,
 			);

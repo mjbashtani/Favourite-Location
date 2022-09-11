@@ -18,13 +18,13 @@ class LocalPersonLoader {
 
 private extension Array where Element == Person {
     func toLocal() -> [LocalPerson] {
-        return map { LocalPerson(firstName: $0.firstName, lastName: $0.lastName, location: $0.location.toLocal()) }
+        return map { LocalPerson(id: $0.id, firstName: $0.firstName, lastName: $0.lastName, location: $0.location.toLocal()) }
     }
 }
 
 private extension Array where Element == LocalPerson {
     func toModels() -> [Person] {
-        return map { Person(firstName: $0.firstName, lastName: $0.lastName, location: $0.location.toModel()) }
+        return map { Person(id: $0.id, firstName: $0.firstName, lastName: $0.lastName, location: $0.location.toModel()) }
     }
 }
 
@@ -68,6 +68,10 @@ class PersonStoreSpy: PersonStore {
         insertionCompletions[index](error)
     }
     
+    func completeInsertionSuccessfully(at index: Int = 0) {
+        insertionCompletions[index](nil)
+    }
+    
 }
 
 class PersonCacheUseCaseTests: XCTestCase {
@@ -94,9 +98,23 @@ class PersonCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(catchedError as NSError?, error)
         XCTAssertEqual(store.messages, [.insert(persons.toLocal())])
     }
+    
+    func test_save_succeedsOnSuccessfulCacheInsertion() {
+        let store = PersonStoreSpy()
+        let sut = LocalPersonLoader(store: store)
+        let persons: [Person] = [uniquePerson()]
+        let exc = XCTestExpectation(description: "Wait for Insert completion")
+        var catchedError: Error? = nil
+        sut.save(peapole: persons) { error in
+            catchedError = error
+            exc.fulfill()
+        }
+        store.completeInsertionSuccessfully()
+        wait(for: [exc], timeout: 1.0)
+        XCTAssertEqual(catchedError as NSError?, nil)
+        XCTAssertEqual(store.messages, [.insert(persons.toLocal())])
+    }
+    
 
 }
 
-func anyNSError() -> NSError {
-    return NSError(domain: "any error", code: 0)
-}
