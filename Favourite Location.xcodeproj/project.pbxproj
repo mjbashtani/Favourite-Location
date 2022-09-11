@@ -15,6 +15,8 @@
 		8DBDFF6428CDFA14000F3BFB /* Favourite_LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF6328CDFA14000F3BFB /* Favourite_LocationTests.swift */; };
 		8DBDFF6E28CDFA14000F3BFB /* Favourite_LocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF6D28CDFA14000F3BFB /* Favourite_LocationUITests.swift */; };
 		8DBDFF7028CDFA14000F3BFB /* Favourite_LocationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF6F28CDFA14000F3BFB /* Favourite_LocationUITestsLaunchTests.swift */; };
+		8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF7D28CDFD5E000F3BFB /* Person.swift */; };
+		8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF7F28CDFDC5000F3BFB /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		8DBDFF6928CDFA14000F3BFB /* Favourite LocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Favourite LocationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBDFF6D28CDFA14000F3BFB /* Favourite_LocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourite_LocationUITests.swift; sourceTree = "<group>"; };
 		8DBDFF6F28CDFA14000F3BFB /* Favourite_LocationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourite_LocationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8DBDFF7D28CDFD5E000F3BFB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8DBDFF7F28CDFDC5000F3BFB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		8DBDFF4B28CDFA10000F3BFB /* Favourite Location */ = {
 			isa = PBXGroup;
 			children = (
+				8DBDFF7C28CDFCC2000F3BFB /* Map feature */,
 				8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */,
 				8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */,
 				8DBDFF5028CDFA10000F3BFB /* ViewController.swift */,
@@ -122,6 +127,15 @@
 				8DBDFF6F28CDFA14000F3BFB /* Favourite_LocationUITestsLaunchTests.swift */,
 			);
 			path = "Favourite LocationUITests";
+			sourceTree = "<group>";
+		};
+		8DBDFF7C28CDFCC2000F3BFB /* Map feature */ = {
+			isa = PBXGroup;
+			children = (
+				8DBDFF7D28CDFD5E000F3BFB /* Person.swift */,
+				8DBDFF7F28CDFDC5000F3BFB /* Location.swift */,
+			);
+			path = "Map feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +270,8 @@
 			files = (
 				8DBDFF5128CDFA10000F3BFB /* ViewController.swift in Sources */,
 				8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */,
+				8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */,
+				8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */,
 				8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
