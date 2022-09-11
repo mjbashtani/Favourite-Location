@@ -9,7 +9,7 @@ import Foundation
 
  enum RetrieveCachedPersonResult {
     case empty
-    case found(peapole: [LocalPerson], timestamp: Date)
+    case found(peapole: [LocalPerson])
     case failure(Error)
 }
 

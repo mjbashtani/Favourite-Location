@@ -7,12 +7,25 @@
 
 import Foundation
 
-class LocalPersonLoader {
+class LocalPersonLoader: PersonLoader {
     let store: PersonStore
     
     init(store: PersonStore) {
-       self.store = store
-   }
+        self.store = store
+    }
+    
+    func load(completion: @escaping (PersonLoader.Result) -> Void) {
+        store.retrieve { result in
+            switch result {
+            case .empty:
+                completion(.success([]))
+            case .found(peapole: let peapole):
+                completion(.success(peapole.toModels()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
 
 private extension Array where Element == Person {
