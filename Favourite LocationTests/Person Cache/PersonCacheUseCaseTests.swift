@@ -11,17 +11,20 @@ import XCTest
 class PersonStoreSpy: PersonStore {
     enum ReceivedMessage: Equatable {
         case insert([LocalPerson])
+        case retrieve
     }
-    private(set) var messages: [ReceivedMessage] = []
+    private(set) var receivedMessages: [ReceivedMessage] = []
     private var insertionCompletions: [InsertionCompletion] = []
-  
+    private var retrievalCompletions: [RetrievalCompletion] = []
+    
     func insert(_ peapole: [LocalPerson], completion: @escaping InsertionCompletion) {
-        messages.append(.insert(peapole))
+        receivedMessages.append(.insert(peapole))
         insertionCompletions.append(completion)
     }
     
     func retrieve(completion: @escaping RetrievalCompletion) {
-        
+        receivedMessages.append(.retrieve)
+        retrievalCompletions.append(completion)
     }
     
     func completeInsertion(with error: Error, at index: Int = 0) {
@@ -32,13 +35,25 @@ class PersonStoreSpy: PersonStore {
         insertionCompletions[index](nil)
     }
     
+    func completeRetrieval(with error: Error ,at index: Int = 0) {
+        retrievalCompletions[index](.failure(error))
+    }
+    
+    func completeRetrievalWithEmptyCache(at index: Int = 0) {
+        retrievalCompletions[index](.empty)
+    }
+    
+    func completeRetrieval(with persons: [LocalPerson], at index: Int = 0) {
+        retrievalCompletions[index](.found(peapole: persons))
+    }
+    
 }
 
 class PersonCacheUseCaseTests: XCTestCase {
     
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
-        XCTAssertTrue(store.messages.isEmpty)
+        XCTAssertTrue(store.receivedMessages.isEmpty)
     }
     
     func test_init_failsOnInsertaionError() {
