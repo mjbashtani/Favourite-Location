@@ -77,44 +77,44 @@ class PersonStoreSpy: PersonStore {
 class PersonCacheUseCaseTests: XCTestCase {
     
     func test_init_doesNotMessageStoreUponCreation() {
-        let store = PersonStoreSpy()
-        _ = LocalPersonLoader(store: store)
+        let (_, store) = makeSUT()
         XCTAssertTrue(store.messages.isEmpty)
     }
     
     func test_init_failsOnInsertaionError() {
-        let store = PersonStoreSpy()
-        let sut = LocalPersonLoader(store: store)
+        let (sut, store) = makeSUT()
         let error = anyNSError()
-        let persons: [Person] = []
-        let exc = XCTestExpectation(description: "Wait for Insert completion")
-        var catchedError: Error? = nil
-        sut.save(peapole: persons) { error in
-            catchedError = error
-            exc.fulfill()
+        expect(sut, toCompleteWithError: error) {
+            store.completeInsertion(with: error)
         }
-        store.completeInsertion(with: error)
-        wait(for: [exc], timeout: 1.0)
-        XCTAssertEqual(catchedError as NSError?, error)
-        XCTAssertEqual(store.messages, [.insert(persons.toLocal())])
     }
     
     func test_save_succeedsOnSuccessfulCacheInsertion() {
-        let store = PersonStoreSpy()
-        let sut = LocalPersonLoader(store: store)
-        let persons: [Person] = [uniquePerson()]
-        let exc = XCTestExpectation(description: "Wait for Insert completion")
-        var catchedError: Error? = nil
-        sut.save(peapole: persons) { error in
-            catchedError = error
-            exc.fulfill()
+        let (sut, store) = makeSUT()
+        expect(sut, toCompleteWithError: nil) {
+            store.completeInsertionSuccessfully()
         }
-        store.completeInsertionSuccessfully()
-        wait(for: [exc], timeout: 1.0)
-        XCTAssertEqual(catchedError as NSError?, nil)
-        XCTAssertEqual(store.messages, [.insert(persons.toLocal())])
     }
     
-
+    private func makeSUT() -> (sut: LocalPersonLoader, store: PersonStoreSpy) {
+        let store = PersonStoreSpy()
+        let sut = LocalPersonLoader(store: store)
+        return (sut, store)
+    }
+    
+    private func expect(_ sut: LocalPersonLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+        let exp = expectation(description: "Wait for save completion")
+        
+        var receivedError: Error?
+        sut.save(peapole: uniquePersons().models) { error in
+            receivedError = error
+            exp.fulfill()
+        }
+        
+        action()
+        wait(for: [exp], timeout: 1.0)
+        
+        XCTAssertEqual(receivedError as NSError?, expectedError, file: file, line: line)
+    }
 }
 
