@@ -20,7 +20,7 @@ import Foundation
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
-    func insert(_ peapole: [LocalPerson], timestamp: Date, completion: @escaping InsertionCompletion)
+    func insert(_ peapole: [LocalPerson], completion: @escaping InsertionCompletion)
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.

@@ -10,6 +10,6 @@ import Foundation
 struct LocalPerson {
     let firstName: String
     let lastName: String
-    let location: Location
+    let location: LocalLocation
     
 }
