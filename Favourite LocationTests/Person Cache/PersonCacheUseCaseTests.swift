@@ -46,9 +46,10 @@ extension LocalPersonLoader {
     func save(peapole: [Person], completion: @escaping (SaveResult) -> Void) {
         store.insert(peapole.toLocal(), completion: completion)
     }
+}
 
 class PersonStoreSpy: PersonStore {
-    enum ReceivedMessage {
+    enum ReceivedMessage: Equatable {
         case insert([LocalPerson])
     }
     private(set) var messages: [ReceivedMessage] = []
@@ -81,8 +82,17 @@ class PersonCacheUseCaseTests: XCTestCase {
         let store = PersonStoreSpy()
         let sut = LocalPersonLoader(store: store)
         let error = anyNSError()
-        let exceptaion = XCTestExpectation(description: "Wait for Insert completion")
-      
+        let persons: [Person] = []
+        let exc = XCTestExpectation(description: "Wait for Insert completion")
+        var catchedError: Error? = nil
+        sut.save(peapole: persons) { error in
+            catchedError = error
+            exc.fulfill()
+        }
+        store.completeInsertion(with: error)
+        wait(for: [exc], timeout: 1.0)
+        XCTAssertEqual(catchedError as NSError?, error)
+        XCTAssertEqual(store.messages, [.insert(persons.toLocal())])
     }
 
 }

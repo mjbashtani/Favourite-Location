@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocalPerson {
+struct LocalPerson: Equatable {
     let firstName: String
     let lastName: String
     let location: LocalLocation
