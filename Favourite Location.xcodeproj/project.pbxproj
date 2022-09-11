@@ -17,6 +17,7 @@
 		8DBDFF7028CDFA14000F3BFB /* Favourite_LocationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF6F28CDFA14000F3BFB /* Favourite_LocationUITestsLaunchTests.swift */; };
 		8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF7D28CDFD5E000F3BFB /* Person.swift */; };
 		8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF7F28CDFDC5000F3BFB /* Location.swift */; };
+		8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8128CDFEA7000F3BFB /* PersonLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8DBDFF6F28CDFA14000F3BFB /* Favourite_LocationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourite_LocationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8DBDFF7D28CDFD5E000F3BFB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		8DBDFF7F28CDFDC5000F3BFB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8DBDFF8128CDFEA7000F3BFB /* PersonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				8DBDFF7D28CDFD5E000F3BFB /* Person.swift */,
 				8DBDFF7F28CDFDC5000F3BFB /* Location.swift */,
+				8DBDFF8128CDFEA7000F3BFB /* PersonLoader.swift */,
 			);
 			path = "Map feature";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */,
 				8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */,
 				8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */,
+				8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
