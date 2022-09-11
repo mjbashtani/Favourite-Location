@@ -23,6 +23,7 @@
 		8DBDFF8E28CE1C46000F3BFB /* PersonCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8D28CE1C46000F3BFB /* PersonCacheHelper.swift */; };
 		8DBDFF9028CE1F72000F3BFB /* LocalPersonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF8F28CE1F72000F3BFB /* LocalPersonLoader.swift */; };
 		8DBDFF9228CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9128CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift */; };
+		8DBDFF9528CE2709000F3BFB /* PersonStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9428CE2709000F3BFB /* PersonStoreSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		8DBDFF8D28CE1C46000F3BFB /* PersonCacheHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCacheHelper.swift; sourceTree = "<group>"; };
 		8DBDFF8F28CE1F72000F3BFB /* LocalPersonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersonLoader.swift; sourceTree = "<group>"; };
 		8DBDFF9128CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRetrieveCacheUseCaseTests.swift; sourceTree = "<group>"; };
+		8DBDFF9428CE2709000F3BFB /* PersonStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonStoreSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,11 +143,20 @@
 		8DBDFF8A28CE04B1000F3BFB /* Person Cache */ = {
 			isa = PBXGroup;
 			children = (
+				8DBDFF9328CE26F5000F3BFB /* Helper */,
 				8DBDFF8B28CE04E9000F3BFB /* PersonCacheUseCaseTests.swift */,
 				8DBDFF9128CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift */,
-				8DBDFF8D28CE1C46000F3BFB /* PersonCacheHelper.swift */,
 			);
 			path = "Person Cache";
+			sourceTree = "<group>";
+		};
+		8DBDFF9328CE26F5000F3BFB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8DBDFF8D28CE1C46000F3BFB /* PersonCacheHelper.swift */,
+				8DBDFF9428CE2709000F3BFB /* PersonStoreSpy.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DBDFF9528CE2709000F3BFB /* PersonStoreSpy.swift in Sources */,
 				8DBDFF8E28CE1C46000F3BFB /* PersonCacheHelper.swift in Sources */,
 				8DBDFF9228CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift in Sources */,
 				8DBDFF6428CDFA14000F3BFB /* Favourite_LocationTests.swift in Sources */,
