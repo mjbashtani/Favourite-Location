@@ -22,7 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureWindow() {
-        window?.rootViewController = ViewController()
+        let viewController = UIViewController()
+        let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
+        viewController.add(child: child, container: viewController.view)
+        child.view.anchor(top: nil, leading: viewController.view.leadingAnchor, bottom: viewController.view.bottomAnchor, trailing: viewController.view.trailingAnchor)
+        child.view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
     func sceneDidDisconnect(_ scene: UIScene) {

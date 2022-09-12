@@ -35,5 +35,7 @@ class PersonCollectionViewCell: UICollectionViewCell {
         mainButton.layer.borderColor = UIColor.separator.cgColor
         mainButton.backgroundColor = .clear
         mainButton.clipsToBounds = true
+        mainButton.isUserInteractionEnabled = false
     }
+    
 }

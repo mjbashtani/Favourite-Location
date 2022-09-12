@@ -8,22 +8,53 @@
 import Foundation
 import UIKit
 
-class PersonCellController {
-    private let viewModel: PersonViewModel
+class PersonCellController: NSObject {
+    private let viewModel: PersonCellViewModel
+    var selection: (() -> Void)?
+    var deselection: (() -> Void)?
     
     
-    init(viewModel: PersonViewModel) {
+    init(viewModel: PersonCellViewModel) {
         self.viewModel = viewModel
     }
     
-    func view(in collectionView: UICollectionView, for indexPath: IndexPath) -> PersonCollectionViewCell {
-        let cell: PersonCollectionViewCell  = collectionView.dequeueReusableCell(for: indexPath)
-        return binded(cell)
+    
+    private func binded(_ cell: PersonCollectionViewCell, defaultSelection: Bool) -> PersonCollectionViewCell {
+        cell.mainButton.setTitle(viewModel.name + "" + viewModel.lastName, for: .normal)
+        cell.mainButton.backgroundColor = defaultSelection ? .blue : .clear
+        viewModel.onSelection = { [weak cell] isSelected in
+            cell?.mainButton.backgroundColor = isSelected ? .blue : .clear
+        }
+        return cell
     }
     
-    private func binded(_ cell: PersonCollectionViewCell) -> PersonCollectionViewCell {
-        cell.mainButton.setTitle(viewModel.name + "" + viewModel.lastName, for: .normal)
-        return cell
+    
+}
+
+extension PersonCellController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: PersonCollectionViewCell  = collectionView.dequeueReusableCell(for: indexPath)
+        let defaultSelection = collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false
+        return binded(cell, defaultSelection: defaultSelection)
+    }
+    
+    
+}
+
+extension PersonCellController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.select()
+        selection?()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        deselection?()
+        viewModel.deselect()
     }
 }
 
