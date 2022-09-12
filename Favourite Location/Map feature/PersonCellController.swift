@@ -10,23 +10,23 @@ import UIKit
 
 class PersonCellController {
     private let viewModel: PersonViewModel
-    private var cell: PersonCollectionViewCell?
     
-     init(viewModel: PersonViewModel) {
+    
+    init(viewModel: PersonViewModel) {
         self.viewModel = viewModel
     }
-        
-    func cancelLoad() {
-        releaseCellForReuse()
+    
+    func view(in collectionView: UICollectionView, for indexPath: IndexPath) -> PersonCollectionViewCell {
+        let cell: PersonCollectionViewCell  = collectionView.dequeueReusableCell(for: indexPath)
+        return binded(cell)
     }
     
-    func view(in collectionView: UICollectionView, for indexPath: IndexPath) -> UICollectionViewCell {
-        cell = collectionView.dequeueReusableCell(for: indexPath)
-        cell?.configure(with: viewModel)
-        return cell!
-    }
-    
-    private func releaseCellForReuse() {
-        cell = nil
+    private func binded(_ cell: PersonCollectionViewCell) -> PersonCollectionViewCell {
+        cell.mainButton.setTitle(viewModel.name + "" + viewModel.lastName, for: .normal)
+        return cell
     }
 }
+
+
+
+
