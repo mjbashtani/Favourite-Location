@@ -27,11 +27,12 @@
 		8DBDFF9728CE27E0000F3BFB /* CodablePersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9628CE27E0000F3BFB /* CodablePersonStore.swift */; };
 		8DBDFF9928CE301C000F3BFB /* PersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9828CE301C000F3BFB /* PersonListViewController.swift */; };
 		8DBDFF9B28CE3DE8000F3BFB /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9A28CE3DE7000F3BFB /* PersonCollectionViewCell.swift */; };
-		8DBDFF9D28CF26B3000F3BFB /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */; };
+		8DBDFF9D28CF26B3000F3BFB /* PersonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9C28CF26B3000F3BFB /* PersonCellViewModel.swift */; };
 		8DBDFFA028CF272D000F3BFB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9F28CF272D000F3BFB /* UIViewController+Extension.swift */; };
 		8DBDFFA228CF2736000F3BFB /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA128CF2736000F3BFB /* UIView+extensions.swift */; };
 		8DBDFFA428CF2906000F3BFB /* PersonCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */; };
 		8DBDFFA628CF298A000F3BFB /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */; };
+		8DBDFFA828CF53E2000F3BFB /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA728CF53E2000F3BFB /* CellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +69,12 @@
 		8DBDFF9628CE27E0000F3BFB /* CodablePersonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePersonStore.swift; sourceTree = "<group>"; };
 		8DBDFF9828CE301C000F3BFB /* PersonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewController.swift; sourceTree = "<group>"; };
 		8DBDFF9A28CE3DE7000F3BFB /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
-		8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		8DBDFF9C28CF26B3000F3BFB /* PersonCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellViewModel.swift; sourceTree = "<group>"; };
 		8DBDFF9F28CF272D000F3BFB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		8DBDFFA128CF2736000F3BFB /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellController.swift; sourceTree = "<group>"; };
 		8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		8DBDFFA728CF53E2000F3BFB /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +145,9 @@
 				8DBDFF7F28CDFDC5000F3BFB /* Location.swift */,
 				8DBDFF8128CDFEA7000F3BFB /* PersonLoader.swift */,
 				8DBDFF9828CE301C000F3BFB /* PersonListViewController.swift */,
-				8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */,
+				8DBDFF9C28CF26B3000F3BFB /* PersonCellViewModel.swift */,
 				8DBDFF9A28CE3DE7000F3BFB /* PersonCollectionViewCell.swift */,
+				8DBDFFA728CF53E2000F3BFB /* CellController.swift */,
 				8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */,
 			);
 			path = "Map feature";
@@ -308,7 +311,8 @@
 				8DBDFFA628CF298A000F3BFB /* UICollectionView+Extensions.swift in Sources */,
 				8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */,
 				8DBDFF9B28CE3DE8000F3BFB /* PersonCollectionViewCell.swift in Sources */,
-				8DBDFF9D28CF26B3000F3BFB /* PersonViewModel.swift in Sources */,
+				8DBDFFA828CF53E2000F3BFB /* CellController.swift in Sources */,
+				8DBDFF9D28CF26B3000F3BFB /* PersonCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
