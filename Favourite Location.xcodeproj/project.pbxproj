@@ -30,6 +30,8 @@
 		8DBDFF9D28CF26B3000F3BFB /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */; };
 		8DBDFFA028CF272D000F3BFB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9F28CF272D000F3BFB /* UIViewController+Extension.swift */; };
 		8DBDFFA228CF2736000F3BFB /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA128CF2736000F3BFB /* UIView+extensions.swift */; };
+		8DBDFFA428CF2906000F3BFB /* PersonCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */; };
+		8DBDFFA628CF298A000F3BFB /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		8DBDFF9F28CF272D000F3BFB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		8DBDFFA128CF2736000F3BFB /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellController.swift; sourceTree = "<group>"; };
+		8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 				8DBDFF9828CE301C000F3BFB /* PersonListViewController.swift */,
 				8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */,
 				8DBDFF9A28CE3DE7000F3BFB /* PersonCollectionViewCell.swift */,
+				8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */,
 			);
 			path = "Map feature";
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			children = (
 				8DBDFF9F28CF272D000F3BFB /* UIViewController+Extension.swift */,
 				8DBDFFA128CF2736000F3BFB /* UIView+extensions.swift */,
+				8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DBDFF5128CDFA10000F3BFB /* ViewController.swift in Sources */,
+				8DBDFFA428CF2906000F3BFB /* PersonCellController.swift in Sources */,
 				8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */,
 				8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */,
 				8DBDFFA028CF272D000F3BFB /* UIViewController+Extension.swift in Sources */,
@@ -298,6 +305,7 @@
 				8DBDFF8528CE02FD000F3BFB /* PersonStore.swift in Sources */,
 				8DBDFF9728CE27E0000F3BFB /* CodablePersonStore.swift in Sources */,
 				8DBDFF8728CE03A6000F3BFB /* LocalPerson.swift in Sources */,
+				8DBDFFA628CF298A000F3BFB /* UICollectionView+Extensions.swift in Sources */,
 				8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */,
 				8DBDFF9B28CE3DE8000F3BFB /* PersonCollectionViewCell.swift in Sources */,
 				8DBDFF9D28CF26B3000F3BFB /* PersonViewModel.swift in Sources */,
