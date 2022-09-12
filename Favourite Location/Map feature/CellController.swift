@@ -9,15 +9,15 @@ import UIKit
 
 public struct CellController {
     let id: AnyHashable
-    let dataSource: UITableViewDataSource
-    let delegate: UITableViewDelegate?
-    let dataSourcePrefetching: UITableViewDataSourcePrefetching?
+    let dataSource: UICollectionViewDataSource
+    let delegate: UICollectionViewDelegate?
+    let dataSourcePrefetching: UICollectionViewDataSourcePrefetching?
     
-    public init(id: AnyHashable, _ dataSource: UITableViewDataSource) {
+    public init(id: AnyHashable, _ dataSource: UICollectionViewDataSource) {
         self.id = id
         self.dataSource = dataSource
-        self.delegate = dataSource as? UITableViewDelegate
-        self.dataSourcePrefetching = dataSource as? UITableViewDataSourcePrefetching
+        self.delegate = dataSource as? UICollectionViewDelegate
+        self.dataSourcePrefetching = dataSource as? UICollectionViewDataSourcePrefetching
     }
 }
 
