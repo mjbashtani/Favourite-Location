@@ -25,6 +25,9 @@
 		8DBDFF9228CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9128CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift */; };
 		8DBDFF9528CE2709000F3BFB /* PersonStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9428CE2709000F3BFB /* PersonStoreSpy.swift */; };
 		8DBDFF9728CE27E0000F3BFB /* CodablePersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9628CE27E0000F3BFB /* CodablePersonStore.swift */; };
+		8DBDFF9928CE301C000F3BFB /* PersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9828CE301C000F3BFB /* PersonListViewController.swift */; };
+		8DBDFF9B28CE3DE8000F3BFB /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9A28CE3DE7000F3BFB /* PersonCollectionViewCell.swift */; };
+		8DBDFF9D28CF26B3000F3BFB /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		8DBDFF9128CE2063000F3BFB /* PersonRetrieveCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRetrieveCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		8DBDFF9428CE2709000F3BFB /* PersonStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonStoreSpy.swift; sourceTree = "<group>"; };
 		8DBDFF9628CE27E0000F3BFB /* CodablePersonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePersonStore.swift; sourceTree = "<group>"; };
+		8DBDFF9828CE301C000F3BFB /* PersonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewController.swift; sourceTree = "<group>"; };
+		8DBDFF9A28CE3DE7000F3BFB /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 				8DBDFF7D28CDFD5E000F3BFB /* Person.swift */,
 				8DBDFF7F28CDFDC5000F3BFB /* Location.swift */,
 				8DBDFF8128CDFEA7000F3BFB /* PersonLoader.swift */,
+				8DBDFF9828CE301C000F3BFB /* PersonListViewController.swift */,
+				8DBDFF9C28CF26B3000F3BFB /* PersonViewModel.swift */,
+				8DBDFF9A28CE3DE7000F3BFB /* PersonCollectionViewCell.swift */,
 			);
 			path = "Map feature";
 			sourceTree = "<group>";
@@ -265,6 +274,7 @@
 				8DBDFF5128CDFA10000F3BFB /* ViewController.swift in Sources */,
 				8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */,
 				8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */,
+				8DBDFF9928CE301C000F3BFB /* PersonListViewController.swift in Sources */,
 				8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */,
 				8DBDFF8928CE03B4000F3BFB /* LocalLocation.swift in Sources */,
 				8DBDFF9028CE1F72000F3BFB /* LocalPersonLoader.swift in Sources */,
@@ -273,6 +283,8 @@
 				8DBDFF9728CE27E0000F3BFB /* CodablePersonStore.swift in Sources */,
 				8DBDFF8728CE03A6000F3BFB /* LocalPerson.swift in Sources */,
 				8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */,
+				8DBDFF9B28CE3DE8000F3BFB /* PersonCollectionViewCell.swift in Sources */,
+				8DBDFF9D28CF26B3000F3BFB /* PersonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
