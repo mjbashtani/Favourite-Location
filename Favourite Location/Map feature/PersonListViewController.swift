@@ -52,29 +52,10 @@ class PersonListViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let dd = (1...100).map { row -> CellController in
-             let id =  UUID().uuidString
-            let model = Person(id: id, firstName: String(id.prefix(3)), lastName: "", location: .init(latitude: 0, longitude: 0))
-            let viewModel =  PersonCellViewModel(name: model.firstName,  lastName: model.lastName)
-            let controller =   PersonCellController(viewModel: viewModel)
-            controller.selection = { [weak self] in
-               
-            }
-            let cellC = CellController(id: id, controller)
-          return cellC
-        }
-        display(dd)
-          
-    }
-
-
+ 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dl = cellController(at: indexPath)?.delegate
