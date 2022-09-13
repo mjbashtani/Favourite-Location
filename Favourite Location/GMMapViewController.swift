@@ -13,6 +13,7 @@ final class GMMapViewController: UIViewController {
     private let markerController: MarkerController
     private var markers: [Weak<IdentifibleMarker>] = []
     static let defaultZoomLevel: Float = 17.0
+    var onViewDidLoad: (() -> Void)?
     
     var currentUserLocation: CLLocationCoordinate2D? {
         didSet {
@@ -20,14 +21,12 @@ final class GMMapViewController: UIViewController {
                 return
             }
             let camera = GMSCameraPosition.camera(withLatitude: (location.latitude), longitude: (location.longitude), zoom: Self.defaultZoomLevel)
-            self.mapView.animate(to: camera)
+            self.mapView?.isMyLocationEnabled = true
+            self.mapView?.animate(to: camera)
+            
         }
     }
-    private lazy var mapView: GMSMapView = {
-        let camera = GMSCameraPosition.init()
-        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-        return mapView
-    }()
+    private  var mapView: GMSMapView?
     
     init(markerController: MarkerController) {
         self.markerController = markerController
@@ -41,11 +40,19 @@ final class GMMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        onViewDidLoad?()
+        
+        
         
     }
     
     private func setupView() {
+        let camera = GMSCameraPosition.init()
+        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(mapView)
+        self.mapView = mapView
+        
     }
     
     
@@ -79,11 +86,11 @@ extension GMMapViewController: MapView {
             markers.map(\.value?.position).compactMap {$0}.forEach { loc in
                 bounds =  bounds.includingCoordinate(loc)
             }
-            let update = GMSCameraUpdate.fit(bounds, withPadding: 30)
-            mapView.animate(with: update)
+            let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
+            mapView?.animate(with: update)
         }
         
-
+        
     }
     
 }

@@ -24,4 +24,11 @@ extension UIViewController {
         removeFromParent()
         view.removeFromSuperview()
     }
+    
+    func addChildWithEqualFrame(_ child: UIViewController, in container: UIView) {
+        addChild(child)
+        container.addSubview(child.view)
+        child.view.anchor(top: container.topAnchor, leading: container.leadingAnchor, bottom: container.bottomAnchor, trailing: container.trailingAnchor)
+        child.didMove(toParent: self)
+    }
 }

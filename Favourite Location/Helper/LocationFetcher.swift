@@ -35,8 +35,9 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        userLocationUpdated?(locations.first?.coordinate)
         manager.stopUpdatingLocation()
+        userLocationUpdated?(locations.first?.coordinate)
+        
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .denied {

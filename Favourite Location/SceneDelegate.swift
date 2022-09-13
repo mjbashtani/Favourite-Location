@@ -10,10 +10,10 @@ import CoreLocation
 
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
     let locationFetcher = LocationFetcher()
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -27,16 +27,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let markerController = MarkerController()
         let viewController = GMMapViewController(markerController: markerController)
         markerController.mapView = viewController
-        locationFetcher.start()
-        locationFetcher.userLocationUpdated = { [weak viewController] location in
-            viewController?.currentUserLocation = location
-            markerController.currentLocation = location
-
-        }
+        let containerView = ShowPersonLocationViewController()
         let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
-        viewController.add(child: child, container: viewController.view)
-        child.view.anchor(top: nil, leading: viewController.view.leadingAnchor, bottom: viewController.view.safeAreaLayoutGuide.bottomAnchor, trailing: viewController.view.trailingAnchor)
-        child.view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        viewController.onViewDidLoad = { [weak locationFetcher] in
+            locationFetcher?.start()
+        }
+
+        containerView.add(child: child, container: containerView.personListContainerView)
+        containerView.add(child: viewController, container: containerView.mapContainerView)
         let id = UUID().uuidString
         let secondID = UUID().uuidString
         let thirdID = UUID().uuidString
@@ -54,10 +52,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return CellController(id: person.id, pc)
         }
         child.display(cellControllers)
-        window?.rootViewController = SelectLocationViewController(currentUserLocation: .init(latitude: 35.7519, longitude: 51.3347))
+        locationFetcher.userLocationUpdated = { [weak viewController] location in
+            viewController?.currentUserLocation = location
+            markerController.currentLocation = location
+            
+
+        }
+        containerView.onAddButtonTap = {
+            let viewController = SelectLocationViewController(currentUserLocation: viewController.currentUserLocation)
+            containerView.show(viewController, sender: self)
+        }
+        window?.rootViewController = containerView
         window?.makeKeyAndVisible()
         
+        
+    }
     
+    func makeSelectLocationViewController() {
+        
     }
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -65,28 +77,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
-
+    
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
-
+    
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
     }
-
+    
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
     }
-
+    
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    
 }
 
