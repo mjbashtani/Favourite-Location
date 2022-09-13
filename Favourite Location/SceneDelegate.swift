@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureWindow() {
-        let viewController = ViewController()
+        let viewController = GMMapViewControlle()
         let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
         viewController.add(child: child, container: viewController.view)
         child.view.anchor(top: nil, leading: viewController.view.leadingAnchor, bottom: viewController.view.bottomAnchor, trailing: viewController.view.trailingAnchor)
