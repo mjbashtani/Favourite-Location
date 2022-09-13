@@ -31,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         locationFetcher.start()
         locationFetcher.userLocationUpdated = { [weak viewController] location in
             viewController?.currentUserLocation = location
+            markerController.currentLocation = location
             loc = location
         }
         let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
