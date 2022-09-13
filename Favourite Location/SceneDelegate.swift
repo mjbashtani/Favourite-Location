@@ -11,7 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let locationFetcher = LocationFetcher()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -24,6 +24,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func configureWindow() {
         let viewController = GMMapViewControlle()
+        locationFetcher.start()
+        locationFetcher.userLocationUpdated = { [weak viewController] location in
+            viewController?.currentUserLocation = location
+        }
         let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
         viewController.add(child: child, container: viewController.view)
         child.view.anchor(top: nil, leading: viewController.view.leadingAnchor, bottom: viewController.view.bottomAnchor, trailing: viewController.view.trailingAnchor)

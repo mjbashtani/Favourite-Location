@@ -9,6 +9,15 @@ import UIKit
 import GoogleMaps
 
 class GMMapViewControlle: UIViewController {
+    var currentUserLocation: CLLocationCoordinate2D? {
+        didSet {
+            guard let location = currentUserLocation else {
+                return
+            }
+            let camera = GMSCameraPosition.camera(withLatitude: (location.latitude), longitude: (location.longitude), zoom: 17.0)
+            self.mapView.animate(to: camera)
+        }
+    }
     private lazy var mapView: GMSMapView = {
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
