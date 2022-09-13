@@ -21,9 +21,9 @@ class PersonCellController: NSObject {
     
     private func binded(_ cell: PersonCollectionViewCell, defaultSelection: Bool) -> PersonCollectionViewCell {
         cell.mainButton.setTitle(viewModel.name + "" + viewModel.lastName, for: .normal)
-        cell.mainButton.backgroundColor = defaultSelection ? .blue : .clear
+        cell.mainButton.backgroundColor = defaultSelection ? .systemFill : .clear
         viewModel.onSelection = { [weak cell] isSelected in
-            cell?.mainButton.backgroundColor = isSelected ? .blue : .clear
+            cell?.mainButton.backgroundColor = isSelected ? .systemFill : .clear
         }
         return cell
     }

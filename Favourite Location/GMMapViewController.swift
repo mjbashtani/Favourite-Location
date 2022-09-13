@@ -53,9 +53,8 @@ final class GMMapViewController: UIViewController {
 
 extension GMMapViewController: MapView {
     func showMarker(_ viewModel: MarkerViewModel) {
-        let marker = LabeledMarker(labelText: viewModel.title, ownerId: viewModel.id)
+        let marker = LabeledMarker(labelText: viewModel.infoText, ownerId: viewModel.id)
         markers.append(.init(value: marker))
-        marker.title = viewModel.title
         marker.position = CLLocationCoordinate2D(latitude: viewModel.latidude, longitude: viewModel.longitude)
         marker.map = mapView
         updateBounds()

@@ -16,7 +16,7 @@ class MarkerController {
         let title = currentLocation.map { cLocation in
             formatDistance(from: cLocation, to: .init(latitude: location.latitude, longitude: location.longitude))
         }
-        let vm = MarkerViewModel(id: id, latidude: location.latitude, longitude: location.longitude, title: title ?? "")
+        let vm = MarkerViewModel(id: id, latidude: location.latitude, longitude: location.longitude, infoText: title ?? "")
         mapView?.showMarker(vm)
     }
     

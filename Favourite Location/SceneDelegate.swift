@@ -27,21 +27,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let markerController = MarkerController()
         let viewController = GMMapViewController(markerController: markerController)
         markerController.mapView = viewController
-        var loc: CLLocationCoordinate2D?
         locationFetcher.start()
         locationFetcher.userLocationUpdated = { [weak viewController] location in
             viewController?.currentUserLocation = location
             markerController.currentLocation = location
-            loc = location
+
         }
         let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
         viewController.add(child: child, container: viewController.view)
-        child.view.anchor(top: nil, leading: viewController.view.leadingAnchor, bottom: viewController.view.bottomAnchor, trailing: viewController.view.trailingAnchor)
+        child.view.anchor(top: nil, leading: viewController.view.leadingAnchor, bottom: viewController.view.safeAreaLayoutGuide.bottomAnchor, trailing: viewController.view.trailingAnchor)
         child.view.heightAnchor.constraint(equalToConstant: 60).isActive = true
         let id = UUID().uuidString
         let secondID = UUID().uuidString
         let thirdID = UUID().uuidString
-        let persons = [Person(id: id, firstName: "mamad", lastName: "ali", location: .init(latitude: 35.7219, longitude: 51.3347)), Person(id: secondID, firstName: "mamad", lastName: "ali", location: .init(latitude: 35.7519, longitude: 51.3347)), Person(id: thirdID, firstName: "asghar", lastName: "mo", location: .init(latitude: 35.7519, longitude: 50.3347))]
+        let persons = [Person(id: id, firstName: "mamadffdfdfdfdfdfdfd", lastName: "ali", location: .init(latitude: 35.7219, longitude: 51.3347)), Person(id: secondID, firstName: "mamad", lastName: "ali", location: .init(latitude: 35.7519, longitude: 51.3347)), Person(id: thirdID, firstName: "asghar", lastName: "mo", location: .init(latitude: 35.7519, longitude: 50.3347))]
         
         let cellControllers = persons.map { person -> CellController in
             let pc = PersonCellController(viewModel: .init(name: person.firstName, lastName:person.lastName))
@@ -55,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return CellController(id: person.id, pc)
         }
         child.display(cellControllers)
-        window?.rootViewController = viewController
+        window?.rootViewController = SelectLocationViewController(currentUserLocation: .init(latitude: 35.7519, longitude: 51.3347))
         window?.makeKeyAndVisible()
         
     
