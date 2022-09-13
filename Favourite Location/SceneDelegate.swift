@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -22,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureWindow() {
-        let viewController = UIViewController()
+        let viewController = ViewController()
         let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
         viewController.add(child: child, container: viewController.view)
         child.view.anchor(top: nil, leading: viewController.view.leadingAnchor, bottom: viewController.view.bottomAnchor, trailing: viewController.view.trailingAnchor)
