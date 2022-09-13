@@ -12,6 +12,7 @@
 		29BC66BD28D075E10086B988 /* IdentifibleMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66BC28D075E10086B988 /* IdentifibleMarker.swift */; };
 		29BC66BF28D075F70086B988 /* MarkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66BE28D075F70086B988 /* MarkerController.swift */; };
 		29BC66C128D076330086B988 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66C028D076330086B988 /* MapView.swift */; };
+		29BC66C328D077E10086B988 /* LabeledMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66C228D077E10086B988 /* LabeledMarker.swift */; };
 		8D52665928CF817000F104C0 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */; };
 		8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */; };
@@ -75,6 +76,7 @@
 		29BC66BC28D075E10086B988 /* IdentifibleMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifibleMarker.swift; sourceTree = "<group>"; };
 		29BC66BE28D075F70086B988 /* MarkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerController.swift; sourceTree = "<group>"; };
 		29BC66C028D076330086B988 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		29BC66C228D077E10086B988 /* LabeledMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledMarker.swift; sourceTree = "<group>"; };
 		808CC26AD03E63A2FDCDFCFF /* Pods-Favourite LocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite LocationTests.debug.xcconfig"; path = "Target Support Files/Pods-Favourite LocationTests/Pods-Favourite LocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D11DDBC28CF70EB009F9E09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8D11DDBE28CF7180009F9E09 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				29BC66BC28D075E10086B988 /* IdentifibleMarker.swift */,
+				29BC66C228D077E10086B988 /* LabeledMarker.swift */,
 			);
 			path = "GMMap Helpers";
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				8DBDFFA428CF2906000F3BFB /* PersonCellController.swift in Sources */,
 				29BC66B828D054AB0086B988 /* LocationFetcher.swift in Sources */,
 				8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */,
+				29BC66C328D077E10086B988 /* LabeledMarker.swift in Sources */,
 				8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */,
 				8DBDFFA028CF272D000F3BFB /* UIViewController+Extension.swift in Sources */,
 				8DBDFF9928CE301C000F3BFB /* PersonListViewController.swift in Sources */,

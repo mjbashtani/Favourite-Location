@@ -11,7 +11,7 @@ struct MarkerViewModel {
     let id: String
     let latidude: Double
     let longitude: Double
-    let owenrName: String
+    let title: String
 }
 
 struct DeleteMarkerViewModel {

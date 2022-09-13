@@ -11,7 +11,7 @@ class MarkerController {
     weak var mapView: MapView?
     
     func addMarker(with location: Location, id: String, title: String) {
-        let vm = MarkerViewModel(id: id, latidude: location.latitude, longitude: location.longitude, owenrName: title)
+        let vm = MarkerViewModel(id: id, latidude: location.latitude, longitude: location.longitude, title: title)
         mapView?.showMarker(vm)
     }
     
