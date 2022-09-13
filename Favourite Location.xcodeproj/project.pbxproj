@@ -76,7 +76,7 @@
 		29BC66BC28D075E10086B988 /* IdentifibleMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifibleMarker.swift; sourceTree = "<group>"; };
 		29BC66BE28D075F70086B988 /* MarkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerController.swift; sourceTree = "<group>"; };
 		29BC66C028D076330086B988 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		29BC66C228D077E10086B988 /* LabeledMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledMarker.swift; sourceTree = "<group>"; };
+		29BC66C228D077E10086B988 /* LabeledMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledMarker.swift; sourceTree = "<group>"; tabWidth = 4; };
 		808CC26AD03E63A2FDCDFCFF /* Pods-Favourite LocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite LocationTests.debug.xcconfig"; path = "Target Support Files/Pods-Favourite LocationTests/Pods-Favourite LocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D11DDBC28CF70EB009F9E09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8D11DDBE28CF7180009F9E09 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
