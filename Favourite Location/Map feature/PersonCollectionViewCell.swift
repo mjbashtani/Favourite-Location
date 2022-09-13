@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PersonCollectionViewCell: UICollectionViewCell {
+final class PersonCollectionViewCell: UICollectionViewCell {
      lazy var mainButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         return button

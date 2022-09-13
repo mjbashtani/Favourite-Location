@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		29BC66B828D054AB0086B988 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66B728D054AB0086B988 /* LocationFetcher.swift */; };
+		29BC66BA28D075AF0086B988 /* WeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66B928D075AF0086B988 /* WeakObject.swift */; };
+		29BC66BD28D075E10086B988 /* IdentifibleMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66BC28D075E10086B988 /* IdentifibleMarker.swift */; };
+		29BC66BF28D075F70086B988 /* MarkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66BE28D075F70086B988 /* MarkerController.swift */; };
+		29BC66C128D076330086B988 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66C028D076330086B988 /* MapView.swift */; };
 		8D52665928CF817000F104C0 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */; };
 		8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */; };
-		8DBDFF5128CDFA10000F3BFB /* GMMapViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF5028CDFA10000F3BFB /* GMMapViewControlle.swift */; };
+		8DBDFF5128CDFA10000F3BFB /* GMMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF5028CDFA10000F3BFB /* GMMapViewController.swift */; };
 		8DBDFF5628CDFA14000F3BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBDFF5528CDFA14000F3BFB /* Assets.xcassets */; };
 		8DBDFF5928CDFA14000F3BFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DBDFF5728CDFA14000F3BFB /* LaunchScreen.storyboard */; };
 		8DBDFF6428CDFA14000F3BFB /* Favourite_LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF6328CDFA14000F3BFB /* Favourite_LocationTests.swift */; };
@@ -67,6 +71,10 @@
 		0EDC8B0D4046DE0566C6A886 /* Pods_Favourite_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Favourite_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21171EB0D0B8CB5EC1D7BBAF /* Pods-Favourite LocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite LocationTests.release.xcconfig"; path = "Target Support Files/Pods-Favourite LocationTests/Pods-Favourite LocationTests.release.xcconfig"; sourceTree = "<group>"; };
 		29BC66B728D054AB0086B988 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		29BC66B928D075AF0086B988 /* WeakObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakObject.swift; sourceTree = "<group>"; };
+		29BC66BC28D075E10086B988 /* IdentifibleMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifibleMarker.swift; sourceTree = "<group>"; };
+		29BC66BE28D075F70086B988 /* MarkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerController.swift; sourceTree = "<group>"; };
+		29BC66C028D076330086B988 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		808CC26AD03E63A2FDCDFCFF /* Pods-Favourite LocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite LocationTests.debug.xcconfig"; path = "Target Support Files/Pods-Favourite LocationTests/Pods-Favourite LocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D11DDBC28CF70EB009F9E09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8D11DDBE28CF7180009F9E09 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -75,7 +83,7 @@
 		8DBDFF4928CDFA10000F3BFB /* Favourite Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Favourite Location.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8DBDFF5028CDFA10000F3BFB /* GMMapViewControlle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMMapViewControlle.swift; sourceTree = "<group>"; };
+		8DBDFF5028CDFA10000F3BFB /* GMMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMMapViewController.swift; sourceTree = "<group>"; };
 		8DBDFF5528CDFA14000F3BFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DBDFF5828CDFA14000F3BFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DBDFF5A28CDFA14000F3BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29BC66BB28D075BA0086B988 /* GMMap Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				29BC66BC28D075E10086B988 /* IdentifibleMarker.swift */,
+			);
+			path = "GMMap Helpers";
+			sourceTree = "<group>";
+		};
 		8D11DDBB28CF70EB009F9E09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +183,7 @@
 				8DBDFF7C28CDFCC2000F3BFB /* Map feature */,
 				8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */,
 				8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */,
-				8DBDFF5028CDFA10000F3BFB /* GMMapViewControlle.swift */,
+				8DBDFF5028CDFA10000F3BFB /* GMMapViewController.swift */,
 				8DBDFF5528CDFA14000F3BFB /* Assets.xcassets */,
 				8DBDFF5728CDFA14000F3BFB /* LaunchScreen.storyboard */,
 				8DBDFF5A28CDFA14000F3BFB /* Info.plist */,
@@ -195,6 +211,8 @@
 				8DBDFF9A28CE3DE7000F3BFB /* PersonCollectionViewCell.swift */,
 				8DBDFFA728CF53E2000F3BFB /* CellController.swift */,
 				8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */,
+				29BC66BE28D075F70086B988 /* MarkerController.swift */,
+				29BC66C028D076330086B988 /* MapView.swift */,
 			);
 			path = "Map feature";
 			sourceTree = "<group>";
@@ -233,10 +251,12 @@
 		8DBDFF9E28CF2720000F3BFB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				29BC66BB28D075BA0086B988 /* GMMap Helpers */,
 				8DBDFF9F28CF272D000F3BFB /* UIViewController+Extension.swift */,
 				8DBDFFA128CF2736000F3BFB /* UIView+extensions.swift */,
 				8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */,
 				29BC66B728D054AB0086B988 /* LocationFetcher.swift */,
+				29BC66B928D075AF0086B988 /* WeakObject.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -420,20 +440,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DBDFF5128CDFA10000F3BFB /* GMMapViewControlle.swift in Sources */,
+				8DBDFF5128CDFA10000F3BFB /* GMMapViewController.swift in Sources */,
+				29BC66C128D076330086B988 /* MapView.swift in Sources */,
 				8DBDFFA428CF2906000F3BFB /* PersonCellController.swift in Sources */,
 				29BC66B828D054AB0086B988 /* LocationFetcher.swift in Sources */,
 				8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */,
 				8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */,
 				8DBDFFA028CF272D000F3BFB /* UIViewController+Extension.swift in Sources */,
 				8DBDFF9928CE301C000F3BFB /* PersonListViewController.swift in Sources */,
+				29BC66BF28D075F70086B988 /* MarkerController.swift in Sources */,
 				8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */,
 				8DBDFFA228CF2736000F3BFB /* UIView+extensions.swift in Sources */,
 				8DBDFF8928CE03B4000F3BFB /* LocalLocation.swift in Sources */,
 				8DBDFF9028CE1F72000F3BFB /* LocalPersonLoader.swift in Sources */,
 				8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */,
 				8DBDFF8528CE02FD000F3BFB /* PersonStore.swift in Sources */,
+				29BC66BD28D075E10086B988 /* IdentifibleMarker.swift in Sources */,
 				8DBDFF9728CE27E0000F3BFB /* CodablePersonStore.swift in Sources */,
+				29BC66BA28D075AF0086B988 /* WeakObject.swift in Sources */,
 				8DBDFF8728CE03A6000F3BFB /* LocalPerson.swift in Sources */,
 				8DBDFFA628CF298A000F3BFB /* UICollectionView+Extensions.swift in Sources */,
 				8DBDFF8228CDFEA7000F3BFB /* PersonLoader.swift in Sources */,
