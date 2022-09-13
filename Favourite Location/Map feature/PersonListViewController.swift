@@ -15,25 +15,25 @@ class PersonListViewController: UICollectionViewController {
             controller.dataSource.collectionView(collectionView, cellForItemAt: index)
         }
     }()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.allowsSelection = true
         collectionView.allowsMultipleSelection = true
         collectionView.dataSource = dataSource
         
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Register cell classes
         self.collectionView!.register(PersonCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: PersonCollectionViewCell.self))
         
-
+        
         // Do any additional setup after loading the view.
     }
     
-     func display(_ sections: [CellController]...) {
+    func display(_ sections: [CellController]...) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, CellController>()
         sections.enumerated().forEach { section, cellControllers in
             snapshot.appendSections([section])
@@ -42,21 +42,25 @@ class PersonListViewController: UICollectionViewController {
         dataSource.apply(snapshot)
     }
     
-     init(collectionFlowViewLayout layout: UICollectionViewFlowLayout) {
-         layout.estimatedItemSize =  UICollectionViewFlowLayout.automaticSize
-         layout.scrollDirection = .horizontal
-         super.init(collectionViewLayout: layout)
+    func display(_ isLoading: Bool) {
+        isLoading ? (view.showIndicator()) : (view.hideIndicator())
+    }
+    
+    init(collectionFlowViewLayout layout: UICollectionViewFlowLayout) {
+        layout.estimatedItemSize =  UICollectionViewFlowLayout.automaticSize
+        layout.scrollDirection = .horizontal
+        super.init(collectionViewLayout: layout)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
- 
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dl = cellController(at: indexPath)?.delegate
         dl?.collectionView?(collectionView, didSelectItemAt: indexPath)
@@ -70,7 +74,7 @@ class PersonListViewController: UICollectionViewController {
     private func cellController(at indexPath: IndexPath) -> CellController? {
         dataSource.itemIdentifier(for: indexPath)
     }
-
+    
 }
 
 

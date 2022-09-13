@@ -62,7 +62,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let viewController = SelectLocationViewController(currentUserLocation: viewController.currentUserLocation)
             containerView.show(viewController, sender: self)
         }
-        window?.rootViewController = containerView
+        
+        let viewModel = AssignLocationViewModel { completion in
+            completion(.success(persons))
+        }
+        let vc = AssignLocationViewController(viewModel: viewModel)
+    
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
         

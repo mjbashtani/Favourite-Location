@@ -15,6 +15,8 @@
 		29BC66C328D077E10086B988 /* LabeledMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66C228D077E10086B988 /* LabeledMarker.swift */; };
 		29BC66C528D095890086B988 /* SelectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66C428D095890086B988 /* SelectLocationViewController.swift */; };
 		29BC66C728D0A6950086B988 /* ShowPersonLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66C628D0A6950086B988 /* ShowPersonLocationViewController.swift */; };
+		29BC66C928D0C39A0086B988 /* AssignLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66C828D0C39A0086B988 /* AssignLocationViewController.swift */; };
+		29BC66CB28D0C6430086B988 /* UIView+Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66CA28D0C6430086B988 /* UIView+Indicator.swift */; };
 		8D52665928CF817000F104C0 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */; };
 		8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */; };
@@ -81,6 +83,8 @@
 		29BC66C228D077E10086B988 /* LabeledMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledMarker.swift; sourceTree = "<group>"; tabWidth = 4; };
 		29BC66C428D095890086B988 /* SelectLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationViewController.swift; sourceTree = "<group>"; };
 		29BC66C628D0A6950086B988 /* ShowPersonLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPersonLocationViewController.swift; sourceTree = "<group>"; };
+		29BC66C828D0C39A0086B988 /* AssignLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignLocationViewController.swift; sourceTree = "<group>"; };
+		29BC66CA28D0C6430086B988 /* UIView+Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Indicator.swift"; sourceTree = "<group>"; };
 		808CC26AD03E63A2FDCDFCFF /* Pods-Favourite LocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite LocationTests.debug.xcconfig"; path = "Target Support Files/Pods-Favourite LocationTests/Pods-Favourite LocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D11DDBC28CF70EB009F9E09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8D11DDBE28CF7180009F9E09 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -193,6 +197,7 @@
 				8DBDFF5028CDFA10000F3BFB /* GMMapViewController.swift */,
 				29BC66C428D095890086B988 /* SelectLocationViewController.swift */,
 				29BC66C628D0A6950086B988 /* ShowPersonLocationViewController.swift */,
+				29BC66C828D0C39A0086B988 /* AssignLocationViewController.swift */,
 				8DBDFF5528CDFA14000F3BFB /* Assets.xcassets */,
 				8DBDFF5728CDFA14000F3BFB /* LaunchScreen.storyboard */,
 				8DBDFF5A28CDFA14000F3BFB /* Info.plist */,
@@ -263,6 +268,7 @@
 				29BC66BB28D075BA0086B988 /* GMMap Helpers */,
 				8DBDFF9F28CF272D000F3BFB /* UIViewController+Extension.swift */,
 				8DBDFFA128CF2736000F3BFB /* UIView+extensions.swift */,
+				29BC66CA28D0C6430086B988 /* UIView+Indicator.swift */,
 				8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */,
 				29BC66B728D054AB0086B988 /* LocationFetcher.swift */,
 				29BC66B928D075AF0086B988 /* WeakObject.swift */,
@@ -457,12 +463,14 @@
 				29BC66C328D077E10086B988 /* LabeledMarker.swift in Sources */,
 				8DBDFF8028CDFDC5000F3BFB /* Location.swift in Sources */,
 				8DBDFFA028CF272D000F3BFB /* UIViewController+Extension.swift in Sources */,
+				29BC66CB28D0C6430086B988 /* UIView+Indicator.swift in Sources */,
 				8DBDFF9928CE301C000F3BFB /* PersonListViewController.swift in Sources */,
 				29BC66BF28D075F70086B988 /* MarkerController.swift in Sources */,
 				8DBDFF7E28CDFD5E000F3BFB /* Person.swift in Sources */,
 				8DBDFFA228CF2736000F3BFB /* UIView+extensions.swift in Sources */,
 				8DBDFF8928CE03B4000F3BFB /* LocalLocation.swift in Sources */,
 				8DBDFF9028CE1F72000F3BFB /* LocalPersonLoader.swift in Sources */,
+				29BC66C928D0C39A0086B988 /* AssignLocationViewController.swift in Sources */,
 				8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */,
 				29BC66C528D095890086B988 /* SelectLocationViewController.swift in Sources */,
 				29BC66C728D0A6950086B988 /* ShowPersonLocationViewController.swift in Sources */,
