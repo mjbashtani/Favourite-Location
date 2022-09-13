@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -23,10 +24,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureWindow() {
-        let viewController = GMMapViewControlle()
+        let markerController = MarkerController()
+        let viewController = GMMapViewControlle(markerController: markerController)
+        markerController.mapView = viewController
+        var loc: CLLocationCoordinate2D?
         locationFetcher.start()
         locationFetcher.userLocationUpdated = { [weak viewController] location in
             viewController?.currentUserLocation = location
+            loc = location
         }
         let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
         viewController.add(child: child, container: viewController.view)
@@ -34,6 +39,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         child.view.heightAnchor.constraint(equalToConstant: 60).isActive = true
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
+        let id = UUID().uuidString
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            markerController.addMarker(with: loc!, id: id)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                markerController.deleteMarker(with: id)
+            }
+
+        }
     }
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
