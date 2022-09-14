@@ -10,6 +10,12 @@ import UIKit
 
 class PersonListViewController: UICollectionViewController {
     var loadData: (() -> Void)?
+    private lazy var emptyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "Empty"
+        return label
+    }()
     private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CellController> = {
         .init(collectionView: collectionView) { (collectionView, index, controller) in
             controller.dataSource.collectionView(collectionView, cellForItemAt: index)
@@ -22,15 +28,20 @@ class PersonListViewController: UICollectionViewController {
         collectionView.allowsMultipleSelection = true
         collectionView.dataSource = dataSource
         
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Register cell classes
         self.collectionView!.register(PersonCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: PersonCollectionViewCell.self))
+        setupEmptyLabel()
+    
+    }
+    
+    private func setupEmptyLabel() {
+       let backgroundView = UIView()
+        collectionView.backgroundView = backgroundView
+        backgroundView.addSubview(emptyLabel)
+        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
+        emptyLabel.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor).isActive = true
+     
         
-        
-        // Do any additional setup after loading the view.
     }
     
     func display(_ sections: [CellController]...) {
@@ -40,6 +51,7 @@ class PersonListViewController: UICollectionViewController {
             snapshot.appendItems(cellControllers, toSection: section)
         }
         dataSource.apply(snapshot)
+        emptyLabel.isHidden = !sections.isEmpty
     }
     
     func display(isLoading: Bool) {
@@ -74,6 +86,7 @@ class PersonListViewController: UICollectionViewController {
     private func cellController(at indexPath: IndexPath) -> CellController? {
         dataSource.itemIdentifier(for: indexPath)
     }
+    
     
 }
 
