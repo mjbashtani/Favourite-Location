@@ -26,6 +26,7 @@ final class ShowPersonLocationViewController: UIViewController {
     }
     
     
+    
     private func setupView() {
         self.view.addSubview(personListContainerView)
         personListContainerView.anchor(leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: self.view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
