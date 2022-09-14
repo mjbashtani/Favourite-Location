@@ -32,3 +32,13 @@ extension UIViewController {
         child.didMove(toParent: self)
     }
 }
+
+extension UIViewController {
+    //Show a basic alert
+    func showAlert(alertText : String, alertMessage : String) {
+        let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Got it", style: UIAlertActionStyle.default, handler: nil))
+        //Add more actions as you see fit
+        self.present(alert, animated: true, completion: nil)
+    }
+}
