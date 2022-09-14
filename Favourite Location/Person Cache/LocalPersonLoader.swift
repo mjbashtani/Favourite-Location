@@ -18,13 +18,13 @@ class LocalPersonLoader {
 
 private extension Array where Element == Person {
     func toLocal() -> [LocalPerson] {
-        return map { LocalPerson(id: $0.id, firstName: $0.firstName, lastName: $0.lastName, location: $0.location.toLocal()) }
+        return map { LocalPerson(id: $0.id, firstName: $0.firstName, lastName: $0.lastName, locations: $0.locations.map {$0.toLocal()}) }
     }
 }
 
 private extension Array where Element == LocalPerson {
     func toModels() -> [Person] {
-        return map { Person(id: $0.id, firstName: $0.firstName, lastName: $0.lastName, location: $0.location.toModel()) }
+        return map { Person(id: $0.id, firstName: $0.firstName, lastName: $0.lastName, locations: $0.locations.map {$0.toModel()}) }
     }
 }
 

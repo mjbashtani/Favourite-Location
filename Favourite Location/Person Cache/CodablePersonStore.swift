@@ -13,19 +13,28 @@ public class CodablePersonStore: PersonStore {
         let id: String
         let firstName: String
         let lastName: String
-        let latidude: Double
-        let longitude: Double
+        let locations: [CodableLocation]
+ 
         
         init(_ person: LocalPerson) {
             id = person.id
             firstName = person.firstName
             lastName = person.lastName
-            latidude = person.location.latitude
-            longitude = person.location.longitude
+            locations = person.locations.map { .init(latidude: $0.latitude, longitude: $0.longitude)}
         }
         
         var local: LocalPerson {
-            return .init(id: self.id, firstName: self.firstName, lastName: self.lastName, location: .init(latitude: latidude, longitude: longitude))
+            return .init(id: self.id, firstName: self.firstName, lastName: self.lastName, locations: locations.map(\.local))
+        }
+        
+    }
+    
+    struct CodableLocation: Codable {
+        let latidude: Double
+        let longitude: Double
+        
+        var local: LocalLocation {
+            .init(latitude: latidude, longitude: longitude)
         }
     }
     

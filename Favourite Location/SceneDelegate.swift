@@ -14,6 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     let locationFetcher = LocationFetcher()
     
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -38,12 +39,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let id = UUID().uuidString
         let secondID = UUID().uuidString
         let thirdID = UUID().uuidString
-        let persons = [Person(id: id, firstName: "mamadffdfdfdfdfdfdfd", lastName: "ali", location: .init(latitude: 35.7219, longitude: 51.3347)), Person(id: secondID, firstName: "mamad", lastName: "ali", location: .init(latitude: 35.7519, longitude: 51.3347)), Person(id: thirdID, firstName: "asghar", lastName: "mo", location: .init(latitude: 35.7519, longitude: 50.3347))]
+        let persons: [Person] = []
         
         let cellControllers = persons.map { person -> CellController in
             let pc = PersonCellController(viewModel: .init(name: person.firstName, lastName:person.lastName))
             pc.selection = {
-                markerController.addMarker(with: .init(latitude: person.location.latitude , longitude: person.location.longitude), id: person.id, title: person.firstName)
+                //markerController.addMarker(with: .init(latitude: person.location.latitude , longitude: person.location.longitude), id: person.id, title: person.firstName)
             }
             
             pc.deselection = {

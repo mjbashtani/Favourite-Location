@@ -11,6 +11,6 @@ struct LocalPerson: Equatable {
     let id: String
     let firstName: String
     let lastName: String
-    let location: LocalLocation
+    let locations: [LocalLocation]
     
 }

@@ -11,6 +11,6 @@ struct Person: Equatable, Hashable {
     let id: String
     let firstName: String
     let lastName: String
-    let location: Location
+    let locations: [Location]
     
 }

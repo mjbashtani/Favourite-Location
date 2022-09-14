@@ -10,6 +10,8 @@ import UIKit
 
 
 final class EnterPersonInfoViewController: UIViewController {
+    typealias UserInfo = (firstName: String, lastName: String)
+    var infoDidEnter: ((UserInfo) -> Void)?
     private lazy var firstNameTextfield: UITextField = {
         let textfield = UITextField()
         textfield.placeholder = "First name"
@@ -70,6 +72,12 @@ final class EnterPersonInfoViewController: UIViewController {
     
     @objc
     func submitButtonTapped() {
-        
+        let info: UserInfo = (firstNameTextfield.text ?? "", lastNameTextfield.text ?? "")
+        if info.firstName.isEmpty {
+            showAlert(alertText: "Error", alertMessage: "You must enter a first name")
+        } else {
+            infoDidEnter?(info)
+        }
     }
+    
 }
