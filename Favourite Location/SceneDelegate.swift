@@ -12,7 +12,14 @@ import CoreLocation
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    let locationFetcher = LocationFetcher()
+    private let locationFetcher = LocationFetcher()
+    private let markerController = MarkerController()
+    private let personLoader: PersonLoader = {
+        let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let url = directory.appendingPathComponent("person.store")
+        let store = CodablePersonStore(storeURL: url)
+        return LocalPersonLoader(store: store)
+    }()
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -25,59 +32,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureWindow() {
-        let markerController = MarkerController()
-        let viewController = GMMapViewController(markerController: markerController)
-        markerController.mapView = viewController
-        let containerView = ShowPersonLocationViewController()
-        let child =  PersonListViewController(collectionFlowViewLayout: UICollectionViewFlowLayout())
-        viewController.onViewDidLoad = { [weak locationFetcher] in
-            locationFetcher?.start()
-        }
 
-        containerView.add(child: child, container: containerView.personListContainerView)
-        containerView.add(child: viewController, container: containerView.mapContainerView)
-        let id = UUID().uuidString
-        let secondID = UUID().uuidString
-        let thirdID = UUID().uuidString
-        let persons: [Person] = []
-        
-        let cellControllers = persons.map { person -> CellController in
-            let pc = PersonCellController(viewModel: .init(name: person.firstName, lastName:person.lastName))
-            pc.selection = {
-                //markerController.addMarker(with: .init(latitude: person.location.latitude , longitude: person.location.longitude), id: person.id, title: person.firstName)
-            }
-            
-            pc.deselection = {
-                markerController.deleteMarker(with: person.id)
-            }
-            return CellController(id: person.id, pc)
-        }
-        child.display(cellControllers)
-        locationFetcher.userLocationUpdated = { [weak viewController] location in
-            viewController?.currentUserLocation = location
-            markerController.currentLocation = location
-            
-
-        }
-        containerView.onAddButtonTap = {
-            let viewController = SelectLocationViewController(currentUserLocation: viewController.currentUserLocation)
-            containerView.show(viewController, sender: self)
-        }
-        
-        let viewModel = AssignLocationViewModel { completion in
-            completion(.success(persons))
-        }
-        let vc = EnterPersonInfoViewController()
-    
-        window?.rootViewController = vc
+        window?.rootViewController = ShowPersonLocationsComposer.composeShowPersonLocationUI(locationFetcher: locationFetcher, personLoader: personLoader)
         window?.makeKeyAndVisible()
 
         
     }
     
-    func makeSelectLocationViewController() {
-        
-    }
+  
+
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
@@ -107,5 +70,57 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
+}
+
+final class ShowPersonLocationsComposer {
+      
+    static func composeShowPersonLocationUI(locationFetcher: LocationFetcher, personLoader: PersonLoader) -> ShowPersonLocationViewController {
+        let markerController = MarkerController()
+        let mapViewController = GMMapViewController(markerController: markerController)
+        let personListViewController = PersonListViewController()
+        locationFetcher.userLocationUpdated = { [weak mapViewController, weak markerController] location  in
+            mapViewController?.currentUserLocation = location
+            markerController?.currentLocation = location
+        }
+        mapViewController.onViewDidLoad = { [weak locationFetcher] in
+            locationFetcher?.start()
+        }
+        let containerView = ShowPersonLocationViewController()
+        containerView.add(child: personListViewController, container: containerView.personListContainerView)
+        containerView.add(child: mapViewController, container: containerView.mapContainerView)
+        return containerView
+        
+    }
+    
+    private static func adaptPersonListViewControllerToPersonLoader(_ vc: PersonListViewController, personLoader: PersonLoader, markerController: MarkerController) {
+        vc.loadData = { [personLoader, weak vc] in
+            vc?.display(isLoading: true)
+            personLoader.load { res in
+                vc?.display(isLoading: false)
+                if let persons = try? res.get() {
+                    vc?.display(persons.map {
+                        makeCellController(person: $0, markerController: markerController)
+                    })
+                }
+            }
+            
+        }
+    }
+    
+    private static func makeCellController(person: Person, markerController: MarkerController) -> CellController {
+        let vm = PersonCellViewModel(name: person.firstName, lastName: person.lastName)
+        let personCellController = PersonCellController(viewModel: vm)
+        personCellController.selection = { [weak markerController] in
+            person.locations.forEach { location in
+                markerController?.addMarker(with: location, id: person.id, title: person.firstName)
+            }
+        }
+        
+        personCellController.deselection = { [weak markerController] in
+            markerController?.deleteMarker(with: person.id)
+        }
+        let cellController = CellController(id: person.id, personCellController)
+        return cellController
+    }
 }
 

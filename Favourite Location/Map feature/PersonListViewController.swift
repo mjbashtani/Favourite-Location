@@ -9,7 +9,7 @@ import UIKit
 
 
 class PersonListViewController: UICollectionViewController {
-    
+    var loadData: (() -> Void)?
     private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CellController> = {
         .init(collectionView: collectionView) { (collectionView, index, controller) in
             controller.dataSource.collectionView(collectionView, cellForItemAt: index)
@@ -42,11 +42,11 @@ class PersonListViewController: UICollectionViewController {
         dataSource.apply(snapshot)
     }
     
-    func display(_ isLoading: Bool) {
+    func display(isLoading: Bool) {
         isLoading ? (view.showIndicator()) : (view.hideIndicator())
     }
     
-    init(collectionFlowViewLayout layout: UICollectionViewFlowLayout) {
+    init(collectionFlowViewLayout layout: UICollectionViewFlowLayout = .init()) {
         layout.estimatedItemSize =  UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
         super.init(collectionViewLayout: layout)
