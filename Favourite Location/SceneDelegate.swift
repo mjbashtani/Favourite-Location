@@ -66,7 +66,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewModel = AssignLocationViewModel { completion in
             completion(.success(persons))
         }
-        let vc = AssignLocationViewController(viewModel: viewModel)
+        let vc = EnterPersonInfoViewController()
     
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
