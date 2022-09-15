@@ -40,9 +40,8 @@ private extension LocalLocation {
     }
 }
 
-extension LocalPersonLoader {
-    public typealias SaveResult = Error?
-    
+extension LocalPersonLoader: PersonCacher {
+
     func save(peapole: [Person], completion: @escaping (SaveResult) -> Void) {
         store.insert(peapole.toLocal(), completion: completion)
     }

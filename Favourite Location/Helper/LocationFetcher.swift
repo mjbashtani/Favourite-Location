@@ -15,6 +15,7 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
     }
     
     let manager = CLLocationManager()
+    var lastFetchedLocation: CLLocationCoordinate2D?
     var userdeniedLocationPermision: (() -> Void)?
     var userLocationUpdated: ((CLLocationCoordinate2D?) -> Void)?
     var errorOccuredWhenFetchingLocation: ((FetchingLocationError) -> Void)?
@@ -36,7 +37,9 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
-        userLocationUpdated?(locations.first?.coordinate)
+        let location = locations.first?.coordinate
+        self.lastFetchedLocation = locations.first?.coordinate
+        userLocationUpdated?(location)
         
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

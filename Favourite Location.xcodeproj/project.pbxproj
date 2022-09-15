@@ -18,6 +18,7 @@
 		29BC66C928D0C39A0086B988 /* AssignLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66C828D0C39A0086B988 /* AssignLocationViewController.swift */; };
 		29BC66CB28D0C6430086B988 /* UIView+Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66CA28D0C6430086B988 /* UIView+Indicator.swift */; };
 		29BC66CD28D1C00F0086B988 /* EnterPersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66CC28D1C00F0086B988 /* EnterPersonInfoViewController.swift */; };
+		29BC66CF28D21CF70086B988 /* PersonCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC66CE28D21CF70086B988 /* PersonCacher.swift */; };
 		8D52665928CF817000F104C0 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DBDFF4D28CDFA10000F3BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */; };
 		8DBDFF4F28CDFA10000F3BFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */; };
@@ -87,6 +88,7 @@
 		29BC66C828D0C39A0086B988 /* AssignLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignLocationViewController.swift; sourceTree = "<group>"; };
 		29BC66CA28D0C6430086B988 /* UIView+Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Indicator.swift"; sourceTree = "<group>"; };
 		29BC66CC28D1C00F0086B988 /* EnterPersonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPersonInfoViewController.swift; sourceTree = "<group>"; };
+		29BC66CE28D21CF70086B988 /* PersonCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCacher.swift; sourceTree = "<group>"; };
 		808CC26AD03E63A2FDCDFCFF /* Pods-Favourite LocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite LocationTests.debug.xcconfig"; path = "Target Support Files/Pods-Favourite LocationTests/Pods-Favourite LocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D11DDBC28CF70EB009F9E09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8D11DDBE28CF7180009F9E09 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -240,6 +242,7 @@
 				8DBDFF8428CE02FD000F3BFB /* PersonStore.swift */,
 				8DBDFF8628CE03A6000F3BFB /* LocalPerson.swift */,
 				8DBDFF8828CE03B4000F3BFB /* LocalLocation.swift */,
+				29BC66CE28D21CF70086B988 /* PersonCacher.swift */,
 				8DBDFF8F28CE1F72000F3BFB /* LocalPersonLoader.swift */,
 				8DBDFF9628CE27E0000F3BFB /* CodablePersonStore.swift */,
 			);
@@ -478,6 +481,7 @@
 				29BC66C528D095890086B988 /* SelectLocationViewController.swift in Sources */,
 				29BC66C728D0A6950086B988 /* ShowPersonLocationViewController.swift in Sources */,
 				8DBDFF8528CE02FD000F3BFB /* PersonStore.swift in Sources */,
+				29BC66CF28D21CF70086B988 /* PersonCacher.swift in Sources */,
 				29BC66BD28D075E10086B988 /* IdentifibleMarker.swift in Sources */,
 				8DBDFF9728CE27E0000F3BFB /* CodablePersonStore.swift in Sources */,
 				29BC66BA28D075AF0086B988 /* WeakObject.swift in Sources */,

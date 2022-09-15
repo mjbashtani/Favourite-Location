@@ -16,9 +16,9 @@ final class AssignLocationViewModel {
     }
     private var persons: [Person] = []
     private var selectedPersonCount = 0
-    
+    private let selectedLocaton: Location
     var locationsDidAssign : (([Person]) -> Void)?
-    let loadPersons: ((Result<[Person], Error>) -> Void) -> Void
+    let loadPersons: ((@escaping (Result<[Person], Error>) -> Void) -> Void)
     var onChange: ((State) -> Void)?
     var isAnyPersonSelected: ((Bool) -> Void)?
    
@@ -28,24 +28,34 @@ final class AssignLocationViewModel {
     }
     
     
-    init(loadPersons: @escaping ((Result<[Person], Error>) -> Void) -> Void) {
+    init(selectedLocation: Location, loadPersons: @escaping ((@escaping (Result<[Person], Error>) -> Void) -> Void)) {
         self.loadPersons = loadPersons
+        self.selectedLocaton = selectedLocation
     }
     
     
     func viewDidLoad() {
-        getPersons()
         isAnyPersonSelected?(selectedPersonCount > 0)
+    }
+    
+    func viewDidAppear() {
+        getPersons()
+    }
+    
+    func refrsh() {
+        getPersons()
     }
     
     private func getPersons() {
         onChange?(.loading)
         loadPersons { [weak self] result in
-            if let persons = try? result.get() {
-                self?.persons = persons
-                onChange?(.loaded)
-            } else {
-                onChange?(.failed)
+            DispatchQueue.main.async {
+                if let persons = try? result.get() {
+                    self?.persons = persons
+                    self?.onChange?(.loaded)
+                } else {
+                    self?.onChange?(.failed)
+                }
             }
         }
     }
@@ -67,18 +77,29 @@ final class AssignLocationViewModel {
     }
     
     func locationAssigned(to indexes: [Int]) {
-        let selectedPersons = indexes.map { persons[$0]}
-        locationsDidAssign?(selectedPersons)
+        let selectedPersons = indexes.forEach { index in
+            persons[index].addLocation(selectedLocaton)
+        }
+                                                                    
+        locationsDidAssign?(persons)
     }
     
 }
 
 final class AssignLocationViewController: UITableViewController {
     private let viewModel: AssignLocationViewModel
+    var onAddButtonTap : (() -> Void)?
+
     private lazy var assignButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.setTitle("Assign", for: .normal)
         button.backgroundColor = .secondarySystemBackground
+        return button
+    }()
+    
+    private lazy var addButton: UIButton = {
+        let button =  UIButton(type: .system)
+        button.setImage(UIImage(named: "add")?.withRenderingMode(.alwaysTemplate).withTintColor(.systemBlue), for: .normal)
         return button
     }()
     
@@ -101,6 +122,11 @@ final class AssignLocationViewController: UITableViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
+    }
+    
     private func setupButton() {
         self.view.addSubview(assignButton)
         assignButton.anchor(leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 15, bottom: 24, right: 16) )
@@ -113,6 +139,9 @@ final class AssignLocationViewController: UITableViewController {
         constrinat.priority = .defaultHigh
         constrinat.isActive = true
         assignButton.addTarget(self, action: #selector(assignButtonTapped), for: .touchUpInside)
+        self.view.addSubview(addButton)
+        addButton.anchor(bottom: self.assignButton.topAnchor, trailing: self.view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 16), size: .init(width: 50, height: 50))
+        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
     }
     private func bind() {
         viewModel.onChange = { [weak self] state in
@@ -131,6 +160,13 @@ final class AssignLocationViewController: UITableViewController {
         viewModel.isAnyPersonSelected = { [weak self] isSelected in
             self?.assignButton.isEnabled = isSelected
         }
+        
+      
+    }
+    
+    @objc
+    private func addButtonTapped() {
+        onAddButtonTap?()
     }
     
     // MARK: - Table view data source
@@ -173,6 +209,10 @@ final class AssignLocationViewController: UITableViewController {
         let selectedIndexes = tableView.indexPathsForSelectedRows?.map(\.row) ?? []
         viewModel.locationAssigned(to: selectedIndexes)
         
+    }
+    
+    func refresh() {
+        viewModel.refrsh()
     }
         
 }

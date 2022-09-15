@@ -8,21 +8,12 @@
 import Foundation
 
 final class PersonCellViewModel {
-    typealias Observer<T> = (T) -> Void
     let name: String
     let lastName: String
-    var onSelection: Observer<Bool>?
     
     init(name: String, lastName: String) {
         self.name = name
         self.lastName = lastName
     }
     
-    func select() {
-        onSelection?(true)
-    }
-    
-    func deselect() {
-        onSelection?(false)
-    }
 }

@@ -14,11 +14,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     private let locationFetcher = LocationFetcher()
     private let markerController = MarkerController()
-    private let personLoader: PersonLoader = {
+    private let personLoader: LocalPersonLoader = {
         let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
         let url = directory.appendingPathComponent("person.store")
         let store = CodablePersonStore(storeURL: url)
         return LocalPersonLoader(store: store)
+    }()
+    
+    private lazy var flow: ApplicationFlow = {
+        .init(personLoader: personLoader, locationFetcher: locationFetcher, personCacher: personLoader)
     }()
     
     
@@ -32,15 +36,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureWindow() {
-
-        window?.rootViewController = ShowPersonLocationsComposer.composeShowPersonLocationUI(locationFetcher: locationFetcher, personLoader: personLoader)
+        window?.rootViewController = flow.start()
         window?.makeKeyAndVisible()
-
+        
         
     }
     
-  
-
+    
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
@@ -73,18 +76,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 final class ShowPersonLocationsComposer {
-      
+    
     static func composeShowPersonLocationUI(locationFetcher: LocationFetcher, personLoader: PersonLoader) -> ShowPersonLocationViewController {
         let markerController = MarkerController()
         let mapViewController = GMMapViewController(markerController: markerController)
         let personListViewController = PersonListViewController()
         locationFetcher.userLocationUpdated = { [weak mapViewController, weak markerController] location  in
-            mapViewController?.currentUserLocation = location
+            DispatchQueue.main.async {
+                mapViewController?.currentUserLocation = location
+            }
             markerController?.currentLocation = location
         }
         mapViewController.onViewDidLoad = { [weak locationFetcher] in
             locationFetcher?.start()
         }
+        markerController.mapView = mapViewController
+        adaptPersonListViewControllerToPersonLoader(personListViewController, personLoader: personLoader, markerController: markerController)
         let containerView = ShowPersonLocationViewController()
         containerView.add(child: personListViewController, container: containerView.personListContainerView)
         containerView.add(child: mapViewController, container: containerView.mapContainerView)
@@ -96,12 +103,15 @@ final class ShowPersonLocationsComposer {
         vc.loadData = { [personLoader, weak vc] in
             vc?.display(isLoading: true)
             personLoader.load { res in
-                vc?.display(isLoading: false)
-                if let persons = try? res.get() {
-                    vc?.display(persons.map {
-                        makeCellController(person: $0, markerController: markerController)
-                    })
+                DispatchQueue.main.async {
+                    vc?.display(isLoading: false)
+                    if let persons = try? res.get() {
+                        vc?.display(persons.map {
+                            makeCellController(person: $0, markerController: markerController)
+                        })
+                    }
                 }
+                
             }
             
         }
@@ -124,3 +134,92 @@ final class ShowPersonLocationsComposer {
     }
 }
 
+final class AssignLocationComposer {
+    static func composeAssignLocation(selectedLocation: CLLocationCoordinate2D, personLoader: PersonLoader, personCacher: PersonCacher, complitionHandler: @escaping () -> Void) -> AssignLocationViewController {
+        let vm = AssignLocationViewModel(selectedLocation: .init(latitude: selectedLocation.latitude, longitude: selectedLocation.longitude),loadPersons: personLoader.load(completion: ))
+        let vc = AssignLocationViewController(viewModel: vm)
+        vm.locationsDidAssign = { persons in
+            personCacher.save(peapole: persons, completion: {_ in
+                complitionHandler()
+            })
+        }
+        return vc
+    }
+}
+
+final class EnterPersonInfoComposer {
+    static func composeEnterPersonInfo(personLoader: PersonLoader, personCacher: PersonCacher, complitionHandler: @escaping (UIViewController) -> Void) -> EnterPersonInfoViewController {
+        let vc = EnterPersonInfoViewController()
+        vc.infoDidEnter = { info in
+            let person = Person(id: UUID().uuidString, firstName: info.firstName, lastName: info.lastName, locations: [])
+            personLoader.load { res in
+                if var persons = try? res.get() {
+                    persons.append(person)
+                    personCacher.save(peapole: persons, completion: { _ in
+                        complitionHandler(vc)
+                    })
+                }
+            }
+        }
+        return vc
+    }
+}
+
+final class ApplicationFlow {
+    internal init(personLoader: PersonLoader, locationFetcher: LocationFetcher, personCacher: PersonCacher) {
+        self.personLoader = personLoader
+        self.locationFetcher = locationFetcher
+        self.personCasher = personCacher
+    }
+    
+    private let personLoader: PersonLoader
+    private let personCasher: PersonCacher
+    private let locationFetcher: LocationFetcher
+    weak var navigationController: UINavigationController?
+    
+    
+    func start() -> UIViewController {
+        let vc = ShowPersonLocationsComposer.composeShowPersonLocationUI(locationFetcher: locationFetcher, personLoader: personLoader)
+        vc.onAddButtonTap = { [weak self] in
+            guard let self = self else { return }
+            vc.show(self.makeSelectLocationViewController(), sender: self)
+        }
+        let nav = UINavigationController(rootViewController: vc)
+        self.navigationController = nav
+        return nav
+        
+    }
+    
+    func makeSelectLocationViewController() -> SelectLocationViewController {
+        let vc =  SelectLocationViewController(currentUserLocation: locationFetcher.lastFetchedLocation)
+        vc.locationSelected = { loc in
+            DispatchQueue.main.async {
+                vc.show(self.makeAssignLocationViewController(selectedLocation: loc), sender: self)
+            }
+        }
+        return vc
+    }
+    
+    func makeAssignLocationViewController(selectedLocation: CLLocationCoordinate2D) -> AssignLocationViewController {
+        let vc = AssignLocationComposer.composeAssignLocation(selectedLocation: selectedLocation, personLoader: personLoader, personCacher: personCasher) { [weak self] in
+            DispatchQueue.main.async {
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+        vc.onAddButtonTap = {
+            vc.showDetailViewController(self.makeEnterPersonInfoViewController {
+                vc.refresh()
+            }, sender: self)
+        }
+        return vc
+    }
+    
+    func makeEnterPersonInfoViewController(completion: @escaping () -> Void) -> EnterPersonInfoViewController {
+        EnterPersonInfoComposer.composeEnterPersonInfo(personLoader: personLoader, personCacher: personCasher, complitionHandler: { vc in
+            DispatchQueue.main.async {
+                vc.dismiss(animated: true)
+                completion()
+            }
+        })
+    }
+}

@@ -22,6 +22,7 @@ class PersonListViewController: UICollectionViewController {
         }
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.allowsSelection = true
@@ -30,7 +31,14 @@ class PersonListViewController: UICollectionViewController {
         
         self.collectionView!.register(PersonCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: PersonCollectionViewCell.self))
         setupEmptyLabel()
+     
     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadData?()
+        
     }
     
     private func setupEmptyLabel() {

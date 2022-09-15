@@ -11,6 +11,10 @@ struct Person: Equatable, Hashable {
     let id: String
     let firstName: String
     let lastName: String
-    let locations: [Location]
+    var locations: [Location]
     
+    mutating func addLocation(_ location: Location) {
+        locations.append(location)
+    }
+
 }

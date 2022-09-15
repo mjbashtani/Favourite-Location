@@ -20,14 +20,14 @@ class PersonCellController: NSObject {
     
     
     private func binded(_ cell: PersonCollectionViewCell, defaultSelection: Bool) -> PersonCollectionViewCell {
-        cell.mainButton.setTitle(viewModel.name + "" + viewModel.lastName, for: .normal)
-        cell.mainButton.backgroundColor = defaultSelection ? .systemFill : .clear
-        viewModel.onSelection = { [weak cell] isSelected in
-            cell?.mainButton.backgroundColor = isSelected ? .systemFill : .clear
-        }
+        cell.textLabel.text = viewModel.name + "" + viewModel.lastName
+        cell.textLabel.backgroundColor = defaultSelection ? .systemFill : .clear
         return cell
     }
     
+    private func handleSelection(cell: PersonCollectionViewCell, isSelected: Bool) {
+        cell.textLabel.backgroundColor = isSelected ? .systemFill : .clear
+    }
     
 }
 
@@ -48,14 +48,17 @@ extension PersonCellController: UICollectionViewDataSource {
 
 extension PersonCellController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.select()
+        let cell = collectionView.cellForItem(at: indexPath) as! PersonCollectionViewCell
+        handleSelection(cell: cell, isSelected: true)
         selection?()
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         deselection?()
-        viewModel.deselect()
+        let cell = collectionView.cellForItem(at: indexPath) as! PersonCollectionViewCell
+        handleSelection(cell: cell, isSelected: false)
     }
+    
 }
 
 

@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 final class PersonCollectionViewCell: UICollectionViewCell {
-     lazy var mainButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        return button
+     lazy var textLabel: UILabel = {
+        let label = UILabel()
+        return label
     }()
     
     override init(frame: CGRect) {
@@ -24,18 +24,19 @@ final class PersonCollectionViewCell: UICollectionViewCell {
     }
     
     func setupView() {
-        contentView.addSubview(mainButton)
-        mainButton.fillSuperview()
-        mainButton.setTitleColor(.label, for: .normal)
-        mainButton.layer.cornerRadius = 4
-        var buttonConfiguration = UIButton.Configuration.borderless()
-        buttonConfiguration.contentInsets = .init(top: 4, leading: 4, bottom: 4, trailing: 4)
-        mainButton.configuration = buttonConfiguration
-        mainButton.layer.borderWidth = 0.7
-        mainButton.layer.borderColor = UIColor.separator.cgColor
-        mainButton.backgroundColor = .clear
-        mainButton.clipsToBounds = true
-        mainButton.isUserInteractionEnabled = false
+        let textContainer = UIView()
+        contentView.addSubview(textContainer)
+        textLabel.fillSuperview()
+        textLabel.textColor = .label
+        textContainer.layer.cornerRadius = 4
+        textContainer.layer.borderWidth = 0.7
+        textContainer.layer.borderColor = UIColor.separator.cgColor
+        textContainer.backgroundColor = .clear
+        textContainer.clipsToBounds = true
+        textContainer.addSubview(textLabel)
+        textContainer.fillSuperview()
+        textLabel.anchor(top: textContainer.topAnchor, leading: textContainer.leadingAnchor, bottom: textContainer.bottomAnchor, trailing: textContainer.trailingAnchor, padding: .init(top: 8, left: 8, bottom: 8, right: 8))
+    
     }
     
 }
