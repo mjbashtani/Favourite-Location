@@ -109,11 +109,25 @@ final class ShowPersonLocationsComposer {
                         vc?.display(persons.map {
                             makeCellController(person: $0, markerController: markerController)
                         })
+                        let selectedPersons = vc?.selectedIndexes.map(\.row).map {
+                            persons[$0]
+                        } ?? []
+                        reloadMarkers(markerController: markerController, persons: selectedPersons)
                     }
                 }
+              
                 
             }
             
+        }
+    }
+    
+    private static func reloadMarkers(markerController: MarkerController, persons: [Person]) {
+        markerController.deleteAllMarkers()
+        persons.forEach { person in
+            person.locations.forEach { loc in
+                markerController.addMarker(with: loc, id: person.id, title: person.firstName)
+            }
         }
     }
     

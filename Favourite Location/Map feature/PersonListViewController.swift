@@ -16,6 +16,10 @@ class PersonListViewController: UICollectionViewController {
         label.text = "Empty"
         return label
     }()
+    
+    var selectedIndexes: [IndexPath] {
+        return collectionView.indexPathsForSelectedItems ?? []
+    }
     private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CellController> = {
         .init(collectionView: collectionView) { (collectionView, index, controller) in
             controller.dataSource.collectionView(collectionView, cellForItemAt: index)
@@ -59,7 +63,7 @@ class PersonListViewController: UICollectionViewController {
             snapshot.appendItems(cellControllers, toSection: section)
         }
         dataSource.apply(snapshot)
-        emptyLabel.isHidden = !sections.isEmpty
+        emptyLabel.isHidden = !sections.allSatisfy(\.isEmpty)
     }
     
     func display(isLoading: Bool) {

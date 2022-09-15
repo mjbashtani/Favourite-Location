@@ -26,6 +26,10 @@ class MarkerController {
         
     }
     
+    func deleteAllMarkers() {
+        mapView?.deleteAllMarkers()
+    }
+    
     private func formatDistance(from origin: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) -> String {
         let distance = CLLocation(latitude: origin.latitude, longitude: origin.longitude).distance(from: .init(latitude: destination.latitude, longitude: destination.longitude))
         let formatter = MeasurementFormatter()

@@ -22,4 +22,5 @@ struct DeleteMarkerViewModel {
 protocol MapView: AnyObject {
     func showMarker(_ viewModel: MarkerViewModel)
     func deleteMarker(_ viewModel: DeleteMarkerViewModel )
+    func deleteAllMarkers()
 }

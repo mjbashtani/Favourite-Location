@@ -80,6 +80,10 @@ extension GMMapViewController: MapView {
         
     }
     
+    func deleteAllMarkers() {
+        mapView?.clear()
+    }
+    
     func updateBounds() {
         var bounds = GMSCoordinateBounds()
         DispatchQueue.main.async { [self] in

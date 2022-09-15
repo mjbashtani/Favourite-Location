@@ -116,8 +116,8 @@ final class AssignLocationViewController: UITableViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         tableView.allowsMultipleSelection = true
-        viewModel.viewDidLoad()
         bind()
+        viewModel.viewDidLoad()
         setupButton()
         
     }
