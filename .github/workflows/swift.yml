@@ -1,19 +1,23 @@
-name: Swift
-
+name: Build and Test
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
-
+    branches: [ main ]
 jobs:
-  build:
-
+  buildAndTest:
     runs-on: macos-latest
-
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      with:
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-
+    - name: CocoaPod Install
+      run: pod install
     - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+      run: xcodebuild -workspace FavouriteLocation.xcworkspace -scheme FavouriteLocation -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12'
+    - name: Test
+      run: xcodebuild -workspace Favourite-Location.xcworkspace -scheme FavouriteLocation -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' test

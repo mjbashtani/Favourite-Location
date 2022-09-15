@@ -47,7 +47,7 @@ final class ShowPersonLocationsComposer {
                         reloadMarkers(markerController: markerController, persons: selectedPersons)
                     }
                 }
-              
+                
                 
             }
             

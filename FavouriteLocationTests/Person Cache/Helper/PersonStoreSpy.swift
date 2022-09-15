@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import Favourite_Location
+@testable import FavouriteLocation
 
 class PersonStoreSpy: PersonStore {
     enum ReceivedMessage: Equatable {

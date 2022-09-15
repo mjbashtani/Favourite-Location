@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Favourite_Location
+@testable import FavouriteLocation
 
 class Favourite_LocationTests: XCTestCase {
 

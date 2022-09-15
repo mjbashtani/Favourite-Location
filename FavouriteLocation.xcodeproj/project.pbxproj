@@ -53,8 +53,6 @@
 		8DBDFFA428CF2906000F3BFB /* PersonCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */; };
 		8DBDFFA628CF298A000F3BFB /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */; };
 		8DBDFFA828CF53E2000F3BFB /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBDFFA728CF53E2000F3BFB /* CellController.swift */; };
-		94166AAE160FFD53586BA773 /* Pods_Favourite_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDC8B0D4046DE0566C6A886 /* Pods_Favourite_Location.framework */; };
-		F7DDA6A8E5518A8D581A0EF4 /* Pods_Favourite_LocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F75E6A4CEFB5C38CE37FD6 /* Pods_Favourite_LocationTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +80,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0EDC8B0D4046DE0566C6A886 /* Pods_Favourite_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Favourite_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21171EB0D0B8CB5EC1D7BBAF /* Pods-Favourite LocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite LocationTests.release.xcconfig"; path = "Target Support Files/Pods-Favourite LocationTests/Pods-Favourite LocationTests.release.xcconfig"; sourceTree = "<group>"; };
+		0CA8F981EC018CAFFF64EC99 /* Pods-FavouriteLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavouriteLocation.debug.xcconfig"; path = "Target Support Files/Pods-FavouriteLocation/Pods-FavouriteLocation.debug.xcconfig"; sourceTree = "<group>"; };
+		0CB89FC6F3C103B806DC0C92 /* Pods-FavouriteLocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavouriteLocationTests.release.xcconfig"; path = "Target Support Files/Pods-FavouriteLocationTests/Pods-FavouriteLocationTests.release.xcconfig"; sourceTree = "<group>"; };
 		2917FC4128D37C9000DF9657 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		2917FC4428D37D9E00DF9657 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		2917FC4C28D37F2700DF9657 /* AssignLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignLocationViewModel.swift; sourceTree = "<group>"; };
@@ -103,19 +101,19 @@
 		29BC66CA28D0C6430086B988 /* UIView+Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Indicator.swift"; sourceTree = "<group>"; };
 		29BC66CC28D1C00F0086B988 /* EnterPersonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPersonInfoViewController.swift; sourceTree = "<group>"; };
 		29BC66CE28D21CF70086B988 /* PersonCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCacher.swift; sourceTree = "<group>"; };
-		808CC26AD03E63A2FDCDFCFF /* Pods-Favourite LocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite LocationTests.debug.xcconfig"; path = "Target Support Files/Pods-Favourite LocationTests/Pods-Favourite LocationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		351D56D735EBA7F1B7EE4A8C /* Pods-FavouriteLocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavouriteLocationTests.debug.xcconfig"; path = "Target Support Files/Pods-FavouriteLocationTests/Pods-FavouriteLocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D11DDBC28CF70EB009F9E09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8D11DDBE28CF7180009F9E09 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8D11DDC028CF718F009F9E09 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8D11DDC228CF71A0009F9E09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8DBDFF4928CDFA10000F3BFB /* Favourite Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Favourite Location.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DBDFF4928CDFA10000F3BFB /* FavouriteLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavouriteLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBDFF4C28CDFA10000F3BFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DBDFF4E28CDFA10000F3BFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8DBDFF5028CDFA10000F3BFB /* GMMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMMapViewController.swift; sourceTree = "<group>"; };
 		8DBDFF5528CDFA14000F3BFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DBDFF5828CDFA14000F3BFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DBDFF5A28CDFA14000F3BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DBDFF5F28CDFA14000F3BFB /* Favourite LocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Favourite LocationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DBDFF5F28CDFA14000F3BFB /* FavouriteLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FavouriteLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBDFF6328CDFA14000F3BFB /* Favourite_LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourite_LocationTests.swift; sourceTree = "<group>"; };
 		8DBDFF7D28CDFD5E000F3BFB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		8DBDFF7F28CDFDC5000F3BFB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -137,9 +135,7 @@
 		8DBDFFA328CF2906000F3BFB /* PersonCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellController.swift; sourceTree = "<group>"; };
 		8DBDFFA528CF298A000F3BFB /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		8DBDFFA728CF53E2000F3BFB /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
-		9EF538A2F678A101E6E6F37D /* Pods-Favourite Location.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite Location.release.xcconfig"; path = "Target Support Files/Pods-Favourite Location/Pods-Favourite Location.release.xcconfig"; sourceTree = "<group>"; };
-		BBB09C0178CD209FC06C5D1F /* Pods-Favourite Location.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favourite Location.debug.xcconfig"; path = "Target Support Files/Pods-Favourite Location/Pods-Favourite Location.debug.xcconfig"; sourceTree = "<group>"; };
-		F3F75E6A4CEFB5C38CE37FD6 /* Pods_Favourite_LocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Favourite_LocationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BECB98D8C2E38021CF3D1693 /* Pods-FavouriteLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavouriteLocation.release.xcconfig"; path = "Target Support Files/Pods-FavouriteLocation/Pods-FavouriteLocation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +143,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94166AAE160FFD53586BA773 /* Pods_Favourite_Location.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7DDA6A8E5518A8D581A0EF4 /* Pods_Favourite_LocationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +225,13 @@
 			path = Composers;
 			sourceTree = "<group>";
 		};
+		298B90E828D46AC300D92D2D /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		29BC66BB28D075BA0086B988 /* Map Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,8 +249,6 @@
 				8D11DDC028CF718F009F9E09 /* CoreData.framework */,
 				8D11DDBE28CF7180009F9E09 /* Accelerate.framework */,
 				8D11DDBC28CF70EB009F9E09 /* CoreBluetooth.framework */,
-				0EDC8B0D4046DE0566C6A886 /* Pods_Favourite_Location.framework */,
-				F3F75E6A4CEFB5C38CE37FD6 /* Pods_Favourite_LocationTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -258,18 +257,19 @@
 			isa = PBXGroup;
 			children = (
 				8DBDFF4B28CDFA10000F3BFB /* Favourite Location */,
-				8DBDFF6228CDFA14000F3BFB /* Favourite LocationTests */,
+				8DBDFF6228CDFA14000F3BFB /* FavouriteLocationTests */,
 				8DBDFF4A28CDFA10000F3BFB /* Products */,
 				8D11DDBB28CF70EB009F9E09 /* Frameworks */,
 				E3E3227624F61A08667E66F0 /* Pods */,
+				298B90E828D46AC300D92D2D /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
 		8DBDFF4A28CDFA10000F3BFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DBDFF4928CDFA10000F3BFB /* Favourite Location.app */,
-				8DBDFF5F28CDFA14000F3BFB /* Favourite LocationTests.xctest */,
+				8DBDFF4928CDFA10000F3BFB /* FavouriteLocation.app */,
+				8DBDFF5F28CDFA14000F3BFB /* FavouriteLocationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,13 +292,13 @@
 			path = "Favourite Location";
 			sourceTree = "<group>";
 		};
-		8DBDFF6228CDFA14000F3BFB /* Favourite LocationTests */ = {
+		8DBDFF6228CDFA14000F3BFB /* FavouriteLocationTests */ = {
 			isa = PBXGroup;
 			children = (
 				8DBDFF8A28CE04B1000F3BFB /* Person Cache */,
 				8DBDFF6328CDFA14000F3BFB /* Favourite_LocationTests.swift */,
 			);
-			path = "Favourite LocationTests";
+			path = FavouriteLocationTests;
 			sourceTree = "<group>";
 		};
 		8DBDFF7C28CDFCC2000F3BFB /* Domain */ = {
@@ -362,10 +362,10 @@
 		E3E3227624F61A08667E66F0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BBB09C0178CD209FC06C5D1F /* Pods-Favourite Location.debug.xcconfig */,
-				9EF538A2F678A101E6E6F37D /* Pods-Favourite Location.release.xcconfig */,
-				808CC26AD03E63A2FDCDFCFF /* Pods-Favourite LocationTests.debug.xcconfig */,
-				21171EB0D0B8CB5EC1D7BBAF /* Pods-Favourite LocationTests.release.xcconfig */,
+				0CA8F981EC018CAFFF64EC99 /* Pods-FavouriteLocation.debug.xcconfig */,
+				BECB98D8C2E38021CF3D1693 /* Pods-FavouriteLocation.release.xcconfig */,
+				351D56D735EBA7F1B7EE4A8C /* Pods-FavouriteLocationTests.debug.xcconfig */,
+				0CB89FC6F3C103B806DC0C92 /* Pods-FavouriteLocationTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -373,31 +373,31 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8DBDFF4828CDFA10000F3BFB /* Favourite Location */ = {
+		8DBDFF4828CDFA10000F3BFB /* FavouriteLocation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DBDFF7328CDFA14000F3BFB /* Build configuration list for PBXNativeTarget "Favourite Location" */;
+			buildConfigurationList = 8DBDFF7328CDFA14000F3BFB /* Build configuration list for PBXNativeTarget "FavouriteLocation" */;
 			buildPhases = (
-				1AB1F5136FFC71CE6D9BDB2E /* [CP] Check Pods Manifest.lock */,
+				362B44153CF94A93E9C6B330 /* [CP] Check Pods Manifest.lock */,
 				8DBDFF4528CDFA10000F3BFB /* Sources */,
 				8DBDFF4628CDFA10000F3BFB /* Frameworks */,
 				8DBDFF4728CDFA10000F3BFB /* Resources */,
 				8D52665A28CF817000F104C0 /* Embed Frameworks */,
-				F3C9D4A3FF0E1198D4A357B6 /* [CP] Copy Pods Resources */,
+				9ED886E841A361E6FE7A80D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Favourite Location";
+			name = FavouriteLocation;
 			productName = "Favourite Location";
-			productReference = 8DBDFF4928CDFA10000F3BFB /* Favourite Location.app */;
+			productReference = 8DBDFF4928CDFA10000F3BFB /* FavouriteLocation.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8DBDFF5E28CDFA14000F3BFB /* Favourite LocationTests */ = {
+		8DBDFF5E28CDFA14000F3BFB /* FavouriteLocationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DBDFF7628CDFA14000F3BFB /* Build configuration list for PBXNativeTarget "Favourite LocationTests" */;
+			buildConfigurationList = 8DBDFF7628CDFA14000F3BFB /* Build configuration list for PBXNativeTarget "FavouriteLocationTests" */;
 			buildPhases = (
-				0CEBD324B9AF0F9DD3F99B8E /* [CP] Check Pods Manifest.lock */,
+				2DF5B00A1FBD286264F78C89 /* [CP] Check Pods Manifest.lock */,
 				8DBDFF5B28CDFA14000F3BFB /* Sources */,
 				8DBDFF5C28CDFA14000F3BFB /* Frameworks */,
 				8DBDFF5D28CDFA14000F3BFB /* Resources */,
@@ -407,9 +407,9 @@
 			dependencies = (
 				8DBDFF6128CDFA14000F3BFB /* PBXTargetDependency */,
 			);
-			name = "Favourite LocationTests";
+			name = FavouriteLocationTests;
 			productName = "Favourite LocationTests";
-			productReference = 8DBDFF5F28CDFA14000F3BFB /* Favourite LocationTests.xctest */;
+			productReference = 8DBDFF5F28CDFA14000F3BFB /* FavouriteLocationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -431,7 +431,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8DBDFF4428CDFA10000F3BFB /* Build configuration list for PBXProject "Favourite Location" */;
+			buildConfigurationList = 8DBDFF4428CDFA10000F3BFB /* Build configuration list for PBXProject "FavouriteLocation" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -444,8 +444,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DBDFF4828CDFA10000F3BFB /* Favourite Location */,
-				8DBDFF5E28CDFA14000F3BFB /* Favourite LocationTests */,
+				8DBDFF4828CDFA10000F3BFB /* FavouriteLocation */,
+				8DBDFF5E28CDFA14000F3BFB /* FavouriteLocationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -471,7 +471,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CEBD324B9AF0F9DD3F99B8E /* [CP] Check Pods Manifest.lock */ = {
+		2DF5B00A1FBD286264F78C89 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,14 +486,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Favourite LocationTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FavouriteLocationTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1AB1F5136FFC71CE6D9BDB2E /* [CP] Check Pods Manifest.lock */ = {
+		362B44153CF94A93E9C6B330 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -508,28 +508,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Favourite Location-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FavouriteLocation-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F3C9D4A3FF0E1198D4A357B6 /* [CP] Copy Pods Resources */ = {
+		9ED886E841A361E6FE7A80D3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Favourite Location/Pods-Favourite Location-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FavouriteLocation/Pods-FavouriteLocation-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Favourite Location/Pods-Favourite Location-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FavouriteLocation/Pods-FavouriteLocation-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Favourite Location/Pods-Favourite Location-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FavouriteLocation/Pods-FavouriteLocation-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -596,7 +596,7 @@
 /* Begin PBXTargetDependency section */
 		8DBDFF6128CDFA14000F3BFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8DBDFF4828CDFA10000F3BFB /* Favourite Location */;
+			target = 8DBDFF4828CDFA10000F3BFB /* FavouriteLocation */;
 			targetProxy = 8DBDFF6028CDFA14000F3BFB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -741,7 +741,7 @@
 		};
 		8DBDFF7428CDFA14000F3BFB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBB09C0178CD209FC06C5D1F /* Pods-Favourite Location.debug.xcconfig */;
+			baseConfigurationReference = 0CA8F981EC018CAFFF64EC99 /* Pods-FavouriteLocation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -752,6 +752,8 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Favourite Location/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Will you allow this app to always know your location?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Do you allow this app to know your current location?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -772,7 +774,7 @@
 		};
 		8DBDFF7528CDFA14000F3BFB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EF538A2F678A101E6E6F37D /* Pods-Favourite Location.release.xcconfig */;
+			baseConfigurationReference = BECB98D8C2E38021CF3D1693 /* Pods-FavouriteLocation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -780,8 +782,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YPR25V7Z8;
 				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Favourite Location/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Will you allow this app to always know your location?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Do you allow this app to know your current location?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -802,7 +807,7 @@
 		};
 		8DBDFF7728CDFA14000F3BFB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 808CC26AD03E63A2FDCDFCFF /* Pods-Favourite LocationTests.debug.xcconfig */;
+			baseConfigurationReference = 351D56D735EBA7F1B7EE4A8C /* Pods-FavouriteLocationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -823,13 +828,13 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Favourite Location.app/Favourite Location";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FavouriteLocation.app/FavouriteLocation";
 			};
 			name = Debug;
 		};
 		8DBDFF7828CDFA14000F3BFB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21171EB0D0B8CB5EC1D7BBAF /* Pods-Favourite LocationTests.release.xcconfig */;
+			baseConfigurationReference = 0CB89FC6F3C103B806DC0C92 /* Pods-FavouriteLocationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -850,14 +855,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Favourite Location.app/Favourite Location";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FavouriteLocation.app/FavouriteLocation";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8DBDFF4428CDFA10000F3BFB /* Build configuration list for PBXProject "Favourite Location" */ = {
+		8DBDFF4428CDFA10000F3BFB /* Build configuration list for PBXProject "FavouriteLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8DBDFF7128CDFA14000F3BFB /* Debug */,
@@ -866,7 +871,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DBDFF7328CDFA14000F3BFB /* Build configuration list for PBXNativeTarget "Favourite Location" */ = {
+		8DBDFF7328CDFA14000F3BFB /* Build configuration list for PBXNativeTarget "FavouriteLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8DBDFF7428CDFA14000F3BFB /* Debug */,
@@ -875,7 +880,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DBDFF7628CDFA14000F3BFB /* Build configuration list for PBXNativeTarget "Favourite LocationTests" */ = {
+		8DBDFF7628CDFA14000F3BFB /* Build configuration list for PBXNativeTarget "FavouriteLocationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8DBDFF7728CDFA14000F3BFB /* Debug */,
