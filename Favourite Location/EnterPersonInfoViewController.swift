@@ -14,7 +14,7 @@ final class EnterPersonInfoViewController: UIViewController {
     var infoDidEnter: ((UserInfo) -> Void)?
     private lazy var firstNameTextfield: UITextField = {
         let textfield = UITextField()
-        textfield.placeholder = "First name"
+        textfield.placeholder = LocalizedString("FIRST_NAME").resolve()
         textfield.layer.borderWidth = 1
         textfield.layer.borderColor = UIColor.separator.cgColor
         return textfield
@@ -22,7 +22,7 @@ final class EnterPersonInfoViewController: UIViewController {
     
     private lazy var lastNameTextfield: UITextField = {
         let textfield = UITextField()
-        textfield.placeholder = "Last name"
+        textfield.placeholder = LocalizedString("LAST_NAME").resolve()
         textfield.layer.borderWidth = 1
         textfield.layer.borderColor = UIColor.separator.cgColor
         return textfield
@@ -30,7 +30,7 @@ final class EnterPersonInfoViewController: UIViewController {
     
     private lazy var submitButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Submit", for: .normal)
+        button.setTitle(LocalizedString("SELECT").resolve(), for: .normal)
         return button
     }()
     
@@ -74,7 +74,7 @@ final class EnterPersonInfoViewController: UIViewController {
     func submitButtonTapped() {
         let info: UserInfo = (firstNameTextfield.text ?? "", lastNameTextfield.text ?? "")
         if info.firstName.isEmpty {
-            showAlert(alertText: "Error", alertMessage: "You must enter a first name")
+            showAlert(alertText: LocalizedString("ERROR").resolve(), alertMessage: LocalizedString("MISSING_FIRST_NAME_ERROR").resolve() )
         } else {
             infoDidEnter?(info)
         }

@@ -77,7 +77,7 @@ final class AssignLocationViewModel {
     }
     
     func locationAssigned(to indexes: [Int]) {
-        let selectedPersons = indexes.forEach { index in
+         indexes.forEach { index in
             persons[index].addLocation(selectedLocaton)
         }
                                                                     
@@ -92,7 +92,7 @@ final class AssignLocationViewController: UITableViewController {
 
     private lazy var assignButton: UIButton = {
         let button = UIButton(type: .roundedRect)
-        button.setTitle("Assign", for: .normal)
+        button.setTitle(LocalizedString("ASSIGN").resolve(), for: .normal)
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
