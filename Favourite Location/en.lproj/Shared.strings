@@ -8,6 +8,6 @@
 "SELECT" = "Select";
 "ASSIGN" = "Assign";
 "FIRST_NAME" = "First name";
-"LAST_NAME" = "Last_Name";
+"LAST_NAME" = "Last name";
 "MISSING_FIRST_NAME_ERROR" =  "You must enter a first name";
 "ERROR" = "ERROR";

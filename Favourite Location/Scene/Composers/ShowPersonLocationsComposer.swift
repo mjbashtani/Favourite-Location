@@ -1,8 +1,8 @@
 //
-//  ShowPersonLocationsComposer.swift
-//  Favourite Location
+//  File.swift
+//  FavouriteLocation
 //
-//  Created by Mohammad Bashtani on 9/15/22.
+//  Created by Mohammad Bashtani on 9/16/22.
 //
 
 import Foundation

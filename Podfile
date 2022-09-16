@@ -6,7 +6,7 @@ target 'FavouriteLocation' do
   use_frameworks!
 
   # Pods for FavouriteLocation
-   pod 'GoogleMaps', '7.1.0'
+pod 'GoogleMaps', '7.1.0'
 
   target 'FavouriteLocationTests' do
     inherit! :search_paths
